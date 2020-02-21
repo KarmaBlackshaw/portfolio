@@ -5,10 +5,9 @@
       <div class="logo">
         <img
           src="@/assets/images/logo.svg"
-          class="logo"
           alt
         />
-        <h1>KARMA BLACKSHAW</h1>
+        <h1>ERNIE JEASH VILLAHERMOSA</h1>
       </div>
       <ul>
         <li class="nav__links">
@@ -18,7 +17,13 @@
           <a href="#">Projects</a>
         </li>
         <li class="nav__links">
+          <a href="#">Services</a>
+        </li>
+        <li class="nav__links">
           <a href="#">About</a>
+        </li>
+        <li class="nav__links">
+          <button class="btn btn--portfolio">PORTFOLIO</button>
         </li>
       </ul>
     </nav>
@@ -47,7 +52,6 @@ export default {
     align-items: center;
     padding: 10px 5%;
     margin: 0;
-    transition: all 0.3s ease-in-out;
 
     & > * {
       font-family: "Montserrat", sans-serif;
@@ -59,27 +63,46 @@ export default {
       display: flex;
       align-items: center;
 
+      img {
+        max-width: 50px;
+      }
+
       h1 {
         margin-left: 10px;
         color: #ecf0f1;
         text-transform: uppercase;
         letter-spacing: 2px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: #0088a9;
+          font-weight: 900;
+        }
       }
     }
 
     .nav__links {
       list-style: none;
       display: inline-block;
-      padding: 0 20px;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
+
+      &:last-child {
+        padding-left: 20px;
+      }
 
       & a {
         color: #ecf0f1;
         text-decoration: none;
         transition: color 0.5s ease 0s;
         font-size: 1.2rem;
+        padding: 15px;
 
         &:hover {
           color: #0088a9;
+          font-weight: 900;
+          border-bottom: 2px solid #0088a9;
         }
       }
     }
@@ -87,11 +110,14 @@ export default {
     .btn {
       color: #ecf0f1;
       padding: 9px 25px;
-      background-color: rgba(0, 136, 169, 1);
       border: none;
       border-radius: 50px;
       cursor: pointer;
       transition: all 0.5s ease 0s;
+
+      &.btn--portfolio {
+        background-color: rgba(0, 136, 169, 1);
+      }
 
       &:hover {
         background-color: rgba(0, 136, 169, 0.8);
