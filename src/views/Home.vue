@@ -1,32 +1,18 @@
 
 <template>
-  <div class="home">
-    <nav class="navbar">
-      <div class="logo">
-        <img
-          src="@/assets/images/logo.svg"
-          alt
-        />
-        <h1>ERNIE JEASH VILLAHERMOSA</h1>
+  <div>
+    <div class="landing">
+      <div class="screen"></div>
+      <div class="introduction">
+        <h1>I build websites for better experience!</h1>
+        <span>FULL STACK DEVELOPER from Cebu, Philippines</span>
+        <div class="divider"></div>
+        <div class="introduction__paragraph">
+          Hi! I am
+          <b>Ernie Jeash C. Villahermosa</b>, a Cebu based full stack developer with less than a year of experience in a professional field. I like to play Mobile Legends during my free time 😎
+        </div>
       </div>
-      <ul>
-        <li class="nav__links">
-          <a href="#">Home</a>
-        </li>
-        <li class="nav__links">
-          <a href="#">Projects</a>
-        </li>
-        <li class="nav__links">
-          <a href="#">Services</a>
-        </li>
-        <li class="nav__links">
-          <a href="#">About</a>
-        </li>
-        <li class="nav__links">
-          <button class="btn btn--portfolio">PORTFOLIO</button>
-        </li>
-      </ul>
-    </nav>
+    </div>
   </div>
 </template>
 
@@ -37,91 +23,73 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
+$bg-image: url("../assets/images/night.jpg");
+@import url("https://fonts.googleapis.com/css?family=ABeeZee|Overpass|Quicksand|Righteous|Roboto&display=swap");
+.landing {
+  height: 100vh;
+  width: 100vw;
+  background-image: $bg-image;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
+  position: relative;
 
-.home {
-  background-image: "../assets/images/night.jpg";
-  width: 100%;
-  height: 100%;
-
-  .navbar {
-    background: #24252a;
-    display: flex;
+  .screen {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    justify-content: space-between;
+    background: #000;
+    opacity: 0.6;
+  }
+
+  .introduction {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 5%;
-    margin: 0;
+    justify-content: center;
+    cursor: default;
 
     & > * {
-      font-family: "Montserrat", sans-serif;
-      text-decoration: none;
+      margin-bottom: 10px;
     }
 
-    .logo {
-      max-width: 50px;
-      display: flex;
-      align-items: center;
-
-      img {
-        max-width: 50px;
-      }
-
-      h1 {
-        margin-left: 10px;
-        color: #ecf0f1;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          color: #0088a9;
-          font-weight: 900;
-        }
-      }
+    h1 {
+      color: rgb(236, 236, 236);
+      font-family: "Righteous";
+      font-size: 5rem;
+      letter-spacing: 3px;
+      display: block;
     }
 
-    .nav__links {
-      list-style: none;
-      display: inline-block;
-      text-transform: uppercase;
-      transition: all 0.3s ease-in-out;
-
-      &:last-child {
-        padding-left: 20px;
-      }
-
-      & a {
-        color: #ecf0f1;
-        text-decoration: none;
-        transition: color 0.5s ease 0s;
-        font-size: 1.2rem;
-        padding: 15px;
-
-        &:hover {
-          color: #0088a9;
-          font-weight: 900;
-          border-bottom: 2px solid #0088a9;
-        }
-      }
-    }
-
-    .btn {
-      color: #ecf0f1;
-      padding: 9px 25px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.5s ease 0s;
-
-      &.btn--portfolio {
-        background-color: rgba(0, 136, 169, 1);
-      }
+    span {
+      font-size: 2rem;
+      font-family: "Roboto";
+      font-weight: lighter;
+      color: rgb(179, 179, 179);
+      transition: all 0.5s ease-in-out;
 
       &:hover {
-        background-color: rgba(0, 136, 169, 0.8);
+        color: white;
       }
+    }
+
+    .divider {
+      width: 50%;
+      border-top: 0.5px solid white;
+      height: 2px;
+      background: rgba(36, 36, 36, 0.452);
+    }
+
+    .introduction__paragraph {
+      text-align: center;
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
+      width: 20%;
+      color: rgb(224, 222, 222);
+      font-family: "Quicksand";
     }
   }
 }
