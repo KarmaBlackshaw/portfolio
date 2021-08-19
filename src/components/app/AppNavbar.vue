@@ -1,13 +1,38 @@
 <template>
-  <nav class="flex justify-between flex-wrap items-center pt-3 mb-16 mx-10">
-    <div class="text-2xl font-semibold h-11">
-      ErnieJeash
+  <nav class="nav">
+    <div class="nav-item nav-item--title">
+      Karma.dev
     </div>
 
-    <div class="hidden xs:block">
-      <button class="bg-transparent border px-4 py-auto rounded h-11">
-        View Projects
-      </button>
+    <div
+      v-if="$breakpoint.name !== 'xs'"
+      class="nav-item nav-item--menu"
+    >
+      <a href="">Blog</a>
+      <a href="">Projects</a>
+      <a href="">Source</a>
     </div>
   </nav>
 </template>
+
+<style lang="scss" scoped>
+nav {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .nav-item {
+    &.nav-item--menu {
+      a {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  @include xs {
+    justify-content: center;
+  }
+}
+</style>

@@ -1,19 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <nav>
-      <div class="nav-item nav-item--title">
-        Karma.dev {{ $breakpoint.name }}
-      </div>
-
-      <div
-        v-if="$breakpoint.name !== 'xs'"
-        class="nav-item nav-item--menu"
-      >
-        <a href="">Blog</a>
-        <a href="">Projects</a>
-        <a href="">Source</a>
-      </div>
-    </nav>
+    <app-navbar />
 
     <article>
       <section>
@@ -24,34 +11,19 @@
 </template>
 
 <script>
+import AppNavbar from '@/components/app/AppNavbar'
 export default {
-  name: 'App'
+  name: 'App',
+
+  components: {
+    AppNavbar
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-
 main {
   max-width: 80%;
   margin: 0px auto;
-}
-
-nav {
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .nav-item {
-    &.nav-item--menu {
-      a {
-        margin-left: 20px;
-      }
-    }
-  }
-
-  @include xs {
-    justify-content: center;
-  }
 }
 </style>
