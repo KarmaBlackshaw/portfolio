@@ -51,3 +51,7 @@ $screen-xl-min: 1905px;
     @content;
   }
 }
+
+.icon-menu:before {
+  content: "\e9bd";
+}

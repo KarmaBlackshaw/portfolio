@@ -1,5 +1,16 @@
 <template>
   <nav class="nav">
+    <button
+      v-if="$breakpoint.xs"
+      class="btn btn-hamburger"
+    >
+      <img
+        class="ico"
+        src="@/assets/svg/icons/menu.svg"
+        alt=""
+      >
+    </button>
+
     <div class="nav-item nav-item--title">
       Karma.dev
     </div>
@@ -33,6 +44,11 @@ nav {
 
   @include xs {
     justify-content: center;
+  }
+
+  .btn-hamburger {
+    position: absolute;
+    left: 0;
   }
 }
 </style>
