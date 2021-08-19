@@ -35,6 +35,10 @@ export default {
     @include xs {
       font-size: 2em;
     }
+
+    @include sm {
+      font-size: 3em;
+    }
   }
 
   .home-hero--subtitle {

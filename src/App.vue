@@ -1,8 +1,8 @@
 <template>
-  <main class="min-h-screen">
+  <main class="app-main">
     <app-navbar />
 
-    <article>
+    <article class="main-article">
       <section>
         <router-view />
       </section>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
+.main-article {
   max-width: 80%;
   margin: 0px auto;
 }
