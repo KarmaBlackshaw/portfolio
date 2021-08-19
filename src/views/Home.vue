@@ -1,6 +1,13 @@
 <template>
   <section class="home">
     <div class="home--container">
+      <div class="home-hero--banner">
+        <img
+          src="@/assets/svg/code-think.svg"
+          alt=""
+        >
+      </div>
+
       <p class="home-hero--title">
         Hi, I'm Ernie Jeash!
       </p>
@@ -31,6 +38,16 @@ export default {
   justify-content: center;
   align-items: center;
 
+  .home-hero--banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    img {
+      max-height: 200px;
+    }
+  }
+
   .home-hero--title {
     text-align: center;
     font-size: 4em;
@@ -38,7 +55,7 @@ export default {
     color: white;
 
     @include xs {
-      font-size: 2em;
+      font-size: 1.9em;
     }
 
     @include sm {

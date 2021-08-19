@@ -72,8 +72,11 @@ export default {
 
   computed: {
     navBodyStyles () {
+      const state = this.state
+      const tabs = this.tabs
+
       const styles = {
-        'max-height': `${this.state.clickedHamburger ? (this.tabs.length * 39) + 14 : 0}px`
+        'max-height': `${state.clickedHamburger ? (tabs.length * 39) + 14 : 0}px`
       }
 
       return Object
