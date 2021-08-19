@@ -90,6 +90,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 .nav-section {
   background: #171B23;
   padding-left: 10%;
@@ -111,9 +113,9 @@ export default {
     }
 
     &.nav-item--title {
-      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
       color: white;
-      letter-spacing: 1.5px;
+      font-size: 1.2em;
     }
   }
 
