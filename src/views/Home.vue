@@ -7,7 +7,12 @@
 
       <p class="home-hero--subtitle">
         I am a web developer from Philippines and I enjoy building web applications,
-        usually with Vue.
+        usually with
+
+        <a
+          class="subtitle--vue"
+          href="https://vuejs.org/"
+        >Vue</a>.
       </p>
     </div>
   </section>
@@ -45,6 +50,10 @@ export default {
     text-align: center;
     font-size: 1em;
     font-weight: light;
+
+    .subtitle--vue {
+      color: #40B882;
+    }
   }
 }
 </style>

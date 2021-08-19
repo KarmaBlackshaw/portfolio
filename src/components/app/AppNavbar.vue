@@ -125,7 +125,7 @@ export default {
 }
 
 .nav-body {
-  transition: max-height 0.5s ease;
+  transition: max-height 0.4s ease;
   overflow: hidden;
 
   ul li {
