@@ -106,7 +106,7 @@ export default {
 
       .contacts-item {
         filter: grayscale(100%);
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
         margin-left: 10px;
         margin-right: 10px;
         display: flex;
@@ -118,6 +118,7 @@ export default {
         }
 
         &:hover {
+          transform: scale(1.2);
           filter: grayscale(0%);
         }
       }
