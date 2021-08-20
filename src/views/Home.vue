@@ -1,6 +1,9 @@
 <template>
   <article>
-    <section class="hero">
+    <section
+      id="hero"
+      class="hero"
+    >
       <div class="hero--container">
         <div class="hero--banner">
           <code-think class="banner" />
@@ -39,12 +42,22 @@
         </p>
       </div>
 
-      <button class="btn-down">
+      <a
+        class="btn-down"
+        href="#stack"
+      >
         <img
           src="@/assets/svg/icons/chevron-down-solid.svg"
           alt=""
         >
-      </button>
+      </a>
+    </section>
+
+    <section
+      id="stack"
+      class="stack"
+    >
+      Hello Nigguh
     </section>
   </article>
 </template>
@@ -62,18 +75,7 @@ export default {
     return {
       hero: {
         title: 'Hi, I\'m Ernie Jeash!'
-      },
-
-      contacts: [
-        {
-          text: 'Github',
-          value: 'https://github.com/KarmaBlackshaw'
-        },
-        {
-          text: 'LinkedIn',
-          value: 'https://www.linkedin.com/in/ernie-jeash-villahermosa-576187199/'
-        }
-      ]
+      }
     }
   }
 }
@@ -217,5 +219,14 @@ export default {
       }
     }
   }
+}
+
+.stack {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  user-select: none;
 }
 </style>
