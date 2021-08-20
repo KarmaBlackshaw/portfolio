@@ -96,6 +96,9 @@ export default {
   background: #171b23;
   padding-left: 10%;
   padding-right: 10%;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 .nav-head {
