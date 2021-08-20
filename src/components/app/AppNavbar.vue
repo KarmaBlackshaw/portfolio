@@ -7,7 +7,6 @@
         @click="state.clickedHamburger = !state.clickedHamburger"
       >
         <img
-          class="ico"
           src="@/assets/svg/icons/menu.svg"
           alt=""
         >
@@ -90,8 +89,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
-
 .nav-section {
   background: lighten($color: $bg-main-dark, $amount: 5%);
   padding-left: 10%;
@@ -129,6 +126,10 @@ export default {
   .btn-hamburger {
     position: absolute;
     left: 0;
+
+    img {
+      height: 24px;
+    }
   }
 }
 

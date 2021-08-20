@@ -67,6 +67,10 @@ export default {
           text: 'Javascript',
           img: 'javascript.svg'
         },
+        {
+          text: 'Git',
+          img: 'git-icon.svg'
+        },
         // {
         //   text: 'eslint',
         //   img: 'eslint.svg'
@@ -96,7 +100,7 @@ export default {
   position: relative;
   user-select: none;
   text-align: center;
-  padding-top: 64px;
+  padding-top: 74px;
   padding-bottom: 64px;
 
   .stack-container {

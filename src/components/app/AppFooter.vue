@@ -101,11 +101,10 @@ export default {
     }
 
     .footer-item--contacts {
-      max-width: 50%;
       display: flex;
 
       .contacts-item {
-        filter: grayscale(100%);
+        filter: grayscale(80%);
         transition: all 0.3s ease;
         margin-left: 10px;
         margin-right: 10px;
@@ -114,7 +113,7 @@ export default {
         align-items: center;
 
         img {
-          max-height: 20px;
+          height: 20px;
         }
 
         &:hover {

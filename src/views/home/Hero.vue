@@ -26,8 +26,7 @@
       </div>
 
       <p class="hero--banner-subtitle">
-        I am a web developer from Philippines and I enjoy building web applications,
-        usually with
+        I am a web developer from Philippines and I enjoy building web applications with
 
         <a
           class="subtitle--vue"
@@ -43,7 +42,7 @@
 
     <a
       class="btn-down"
-      href="#stack"
+      href="#about"
     >
       <img
         src="@/assets/svg/icons/chevron-down-solid.svg"
@@ -55,7 +54,7 @@
 
 <script>
 
-import CodeThink from '@/assets/svg/CodeThink'
+import CodeThink from './CodeThink'
 
 export default {
   name: 'Hero',
@@ -124,17 +123,13 @@ export default {
       font-size: 4em;
 
       @keyframes stretch {
-        0% {
-          transform: scale(1, 1);
-        }
-
         40% {
           transform: scale(1.2, 0.5);
+          color: #9d9fa3;
         }
 
         60% {
-          transform: scale(0.8, 1.5);
-          color: rgb(208, 255, 206);
+          transform: scale(0.8, 1.6);
         }
 
         70% {
@@ -149,7 +144,8 @@ export default {
           transform: scale(1, 0.9);
         }
 
-        90% {
+        0%,
+        100% {
           transform: scale(1, 1);
           color: #fff;
         }

@@ -3,10 +3,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         additionalData: `
-          @import "@/assets/scss/_breakpoint.scss";
-          @import "@/assets/scss/_icon.scss";
-          @import "@/assets/scss/_constants.scss";
-          @import "@/assets/scss/_colors.scss";
+          @import "@/assets/scss/_global.scss";
         `
       }
     }
