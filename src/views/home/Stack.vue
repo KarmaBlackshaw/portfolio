@@ -97,6 +97,7 @@ export default {
   user-select: none;
   text-align: center;
   padding-top: 64px;
+  padding-bottom: 64px;
 
   .stack-container {
     margin-right: auto;
@@ -135,10 +136,14 @@ export default {
       }
 
       .item-img {
-        height: 180px;
+        height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        img {
+          height: 80px;
+        }
 
         @include xs {
           height: 80px;
