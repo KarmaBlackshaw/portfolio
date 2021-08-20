@@ -127,6 +127,7 @@ export default {
       @include xs {
         min-height: 100px;
         width: 100px;
+        margin: 10px;
       }
 
       &:hover {
