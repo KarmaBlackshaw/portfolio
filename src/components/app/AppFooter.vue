@@ -52,6 +52,11 @@ export default {
           name: 'Stackoverflow',
           img: 'stackoverflow-icon.svg',
           value: 'https://stackoverflow.com/users/8749149/karma-blackshaw'
+        },
+        {
+          name: 'Facebook',
+          img: 'facebook.svg',
+          value: 'https://www.facebook.com/KarmaBlackshaw/'
         }
       ]
     }
