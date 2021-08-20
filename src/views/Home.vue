@@ -126,9 +126,13 @@ export default {
           img: 'css-3.svg'
         },
         {
-          text: 'eslint',
-          img: 'eslint.svg'
+          text: 'Javascript',
+          img: 'javascript.svg'
         },
+        // {
+        //   text: 'eslint',
+        //   img: 'eslint.svg'
+        // },
         {
           text: 'vuetify',
           img: 'vuetifyjs.svg'
@@ -136,11 +140,11 @@ export default {
         {
           text: 'netlify',
           img: 'netlify.svg'
-        },
-        {
-          text: 'VS Code',
-          img: 'visual-studio-code.svg'
         }
+        // {
+        //   text: 'VS Code',
+        //   img: 'visual-studio-code.svg'
+        // }
       ]
     }
   }
@@ -292,7 +296,7 @@ export default {
 
 .stack {
   background: white;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   user-select: none;
   text-align: center;
@@ -324,21 +328,34 @@ export default {
       margin: 10px;
       transition: all 0.4s ease;
 
+      @include xs {
+        min-height: 100px;
+        max-width: 100px;
+      }
+
       &:hover {
         transform: scale(1.05);
       }
 
       .item-img {
         height: 200px;
+
+        @include xs {
+          height: 80px;
+        }
       }
 
       .item-title {
-        border-top: 1px solid rgb(209, 206, 206);
         margin-top: 20px;
         padding-top: 10px;
         color: #171b23;
         font-weight: 500;
         text-transform: uppercase;
+
+        @include xs {
+          font-size: 0.8em;
+          font-weight: 400;
+        }
       }
     }
   }
