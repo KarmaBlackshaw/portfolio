@@ -12,7 +12,7 @@
         <a
           v-for="(currContact, contactKey) in contacts"
           :key="contactKey"
-          class="contacts-container"
+          class="contacts-item"
           :href="currContact.value"
           target="_blank"
         >
@@ -69,11 +69,22 @@ export default {
   user-select: none;
   background-color: $bg-main-dark;
 
+  @include xs {
+    height: 80px;
+  }
+
   .footer--container {
     width: 100%;
     max-width: $content-width;
     display: flex;
+    height: 100%;
     justify-content: space-between;
+
+    @include xs {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-evenly;
+    }
 
     .footer-item {
       display: flex;
@@ -88,13 +99,17 @@ export default {
       max-width: 50%;
       display: flex;
 
-      .contacts-container {
+      .contacts-item {
         filter: grayscale(100%);
         transition: all 0.5s ease;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
-          height: 17px;
-          margin-left: 20px;
+          max-height: 20px;
         }
 
         &:hover {
