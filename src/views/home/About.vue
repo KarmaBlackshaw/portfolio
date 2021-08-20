@@ -11,7 +11,7 @@
           </h1>
 
           <p class="about-content">
-            For now, it's just me, Ernie Jeash Villahermosa. Striving to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuffs. A college graduate who thinks developers have a very high salary.
+            For now, it's just me, Ernie Jeash Villahermosa. A web developer with {{ yearsOfExperience }} years of experience. Striving to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuffs. A college graduate who thinks developers have a very high salary.
           </p>
         </div>
       </div>
@@ -30,7 +30,16 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+
+  computed: {
+    yearsOfExperience () {
+      const currYear = new Date().getFullYear()
+      const startYear = 2019
+
+      return currYear - startYear
+    }
+  }
 }
 </script>
 
