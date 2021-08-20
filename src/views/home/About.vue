@@ -11,7 +11,7 @@
           </h1>
 
           <p class="about-content">
-            For now, it's just me, Ernie Jeash Villahermosa. A web developer with {{ yearsOfExperience }} years of experience. Striving to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuffs. A college graduate who thinks developers have a very high salary.
+            For now, it's just me, Ernie Jeash Villahermosa. A web developer with {{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }} of experience. Striving to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuffs. A college graduate who thinks developers have a very high salary.
           </p>
         </div>
       </div>
@@ -33,11 +33,23 @@ export default {
   name: 'About',
 
   computed: {
-    yearsOfExperience () {
-      const currYear = new Date().getFullYear()
-      const startYear = 2019
+    durationOfExperience () {
+      const startDate = new Date('2019-07-22')
+      const currDate = new Date()
 
-      return currYear - startYear
+      const startYear = startDate.getFullYear()
+      const currYear = currDate.getFullYear()
+
+      const startMonth = startDate.getMonth()
+      const currMonth = currDate.getMonth()
+
+      const diffYears = currYear - startYear
+      const diffMonths = currMonth - startMonth
+
+      return {
+        year: diffYears,
+        month: diffMonths
+      }
     }
   }
 }
@@ -103,7 +115,7 @@ export default {
 
     .about-content {
       font-weight: 100;
-      font-size: 2em;
+      font-size: 1.8em;
       color: $bg-main-dark;
 
       @include xs {
