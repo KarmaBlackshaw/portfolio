@@ -63,9 +63,9 @@ export default {
       },
 
       tabs: [
-        { text: 'Blog', to: '' },
-        { text: 'Projects', to: '' },
-        { text: 'Source', to: '' }
+        // { text: 'Blog', to: '' },
+        // { text: 'Projects', to: '' },
+        // { text: 'Source', to: '' }
       ]
     }
   },
