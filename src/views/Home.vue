@@ -110,6 +110,10 @@ export default {
           img: 'nodejs-icon.svg'
         },
         {
+          text: 'Koa.js',
+          img: 'koa.svg'
+        },
+        {
           text: 'Mysql',
           img: 'mysql.svg'
         },
