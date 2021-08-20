@@ -68,11 +68,12 @@
             :key="stackKey"
             class="stack-list--item"
           >
-            <img
-              :src="require(`@/assets/svg/${currStack.img}`)"
-              class="item-img"
-              alt=""
-            >
+            <div class="item-img">
+              <img
+                :src="require(`@/assets/svg/${currStack.img}`)"
+                alt=""
+              >
+            </div>
 
             <p
               class="item-title"
@@ -322,7 +323,7 @@ export default {
     .stack-list--item {
       padding: 20px;
       min-height: 200px;
-      max-width: 200px;
+      width: 200px;
       background: rgb(247, 246, 246);
       border-radius: 15px;
       margin: 10px;
@@ -330,7 +331,7 @@ export default {
 
       @include xs {
         min-height: 100px;
-        max-width: 100px;
+        width: 100px;
       }
 
       &:hover {
@@ -339,6 +340,9 @@ export default {
 
       .item-img {
         height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         @include xs {
           height: 80px;
