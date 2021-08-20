@@ -20,10 +20,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.main-article {
-  max-width: 80%;
-  margin: 0px auto;
-}
-</style>

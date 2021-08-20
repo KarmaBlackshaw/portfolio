@@ -57,7 +57,30 @@
       id="stack"
       class="stack"
     >
-      Hello Nigguh
+      <div class="stack-container">
+        <h1 class="stack-title">
+          Tech Stack
+        </h1>
+
+        <div class="stack-list">
+          <div
+            v-for="(currStack, stackKey) in stack"
+            :key="stackKey"
+            class="stack-list--item"
+          >
+            <img
+              :src="require(`@/assets/svg/${currStack.img}`)"
+              class="item-img"
+              alt=""
+            >
+
+            <p
+              class="item-title"
+              v-text="currStack.text"
+            ></p>
+          </div>
+        </div>
+      </div>
     </section>
   </article>
 </template>
@@ -75,7 +98,46 @@ export default {
     return {
       hero: {
         title: 'Hi, I\'m Ernie Jeash!'
-      }
+      },
+
+      stack: [
+        {
+          text: 'Vue.js',
+          img: 'vue.svg'
+        },
+        {
+          text: 'Node.js',
+          img: 'nodejs-icon.svg'
+        },
+        {
+          text: 'Mysql',
+          img: 'mysql.svg'
+        },
+        {
+          text: 'html 5',
+          img: 'html-5.svg'
+        },
+        {
+          text: 'Css 3',
+          img: 'css-3.svg'
+        },
+        {
+          text: 'eslint',
+          img: 'eslint.svg'
+        },
+        {
+          text: 'vuetify',
+          img: 'vuetifyjs.svg'
+        },
+        {
+          text: 'netlify',
+          img: 'netlify.svg'
+        },
+        {
+          text: 'VS Code',
+          img: 'visual-studio-code.svg'
+        }
+      ]
     }
   }
 }
@@ -97,36 +159,6 @@ export default {
   }
 }
 
-@keyframes stretch {
-  0% {
-    transform: scale(1, 1);
-  }
-
-  40% {
-    transform: scale(1.2, 0.5);
-  }
-
-  60% {
-    transform: scale(0.8, 1.5);
-  }
-
-  70% {
-    transform: scale(1.1, 0.9);
-  }
-
-  80% {
-    transform: scale(0.9, 1.3);
-  }
-
-  90% {
-    transform: scale(1, 0.9);
-  }
-
-  90% {
-    transform: scale(1, 1);
-  }
-}
-
 .hero {
   height: calc(100vh - 64px);
   display: flex;
@@ -136,6 +168,8 @@ export default {
   user-select: none;
 
   .hero--container {
+    max-width: $content-width;
+
     .hero--banner {
       display: flex;
       justify-content: center;
@@ -154,15 +188,46 @@ export default {
     .hero--banner-title {
       text-align: center;
       font-weight: bold;
-      color: rgb(224, 224, 224);
+      color: #fff;
       font-size: 4em;
+
+      @keyframes stretch {
+        0% {
+          transform: scale(1, 1);
+        }
+
+        40% {
+          transform: scale(1.2, 0.5);
+        }
+
+        60% {
+          transform: scale(0.8, 1.5);
+          color: rgb(208, 255, 206);
+        }
+
+        70% {
+          transform: scale(1.1, 0.9);
+        }
+
+        80% {
+          transform: scale(0.9, 1.3);
+        }
+
+        90% {
+          transform: scale(1, 0.9);
+        }
+
+        90% {
+          transform: scale(1, 1);
+          color: #fff;
+        }
+      }
 
       span {
         display: inline-block;
 
         &:hover {
           animation: stretch 0.8s ease-in-out;
-          color: #fff;
         }
       }
 
@@ -222,11 +287,56 @@ export default {
 }
 
 .stack {
+  background: white;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   user-select: none;
+  text-align: center;
+  padding-top: 64px;
+
+  .stack-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $content-width;
+  }
+
+  .stack-title {
+    font-size: 2em;
+    color: #171b23;
+  }
+
+  .stack-list {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .stack-list--item {
+      padding: 20px;
+      min-height: 200px;
+      max-width: 200px;
+      background: rgb(247, 246, 246);
+      border-radius: 15px;
+      margin: 10px;
+      transition: all 0.4s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .item-img {
+        height: 200px;
+      }
+
+      .item-title {
+        border-top: 1px solid rgb(209, 206, 206);
+        margin-top: 20px;
+        padding-top: 10px;
+        color: #171b23;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
 </style>
