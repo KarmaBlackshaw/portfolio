@@ -62,7 +62,6 @@ export default {
   position: relative;
   user-select: none;
   text-align: center;
-  padding-top: 74px;
   padding-bottom: 64px;
   border-bottom: 1px solid #e1e2e4;
 
