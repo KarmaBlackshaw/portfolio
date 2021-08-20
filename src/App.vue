@@ -7,16 +7,21 @@
         <router-view />
       </section>
     </article>
+
+    <app-footer />
   </main>
 </template>
 
 <script>
 import AppNavbar from '@/components/app/AppNavbar'
+import AppFooter from '@/components/app/AppFooter'
+
 export default {
   name: 'App',
 
   components: {
-    AppNavbar
+    AppNavbar,
+    AppFooter
   }
 }
 </script>
