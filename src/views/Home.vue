@@ -2,10 +2,11 @@
   <section class="home">
     <div class="home--container">
       <div class="home-hero--banner">
-        <img
-          src="@/assets/svg/code-think.svg"
+        <code-think class="banner" />
+        <!-- <img
+          src="@/assets/svg/code-think-css.svg"
           alt=""
-        >
+        > -->
       </div>
 
       <p class="home-hero--title">
@@ -26,8 +27,13 @@
 </template>
 
 <script>
+import CodeThink from '@/assets/svg/CodeThink'
 export default {
-  name: 'Home'
+  name: 'Home',
+
+  components: {
+    CodeThink
+  }
 }
 </script>
 
@@ -43,8 +49,13 @@ export default {
     justify-content: center;
     margin-bottom: 10px;
 
-    img {
+    .banner {
       max-height: 200px;
+      width: auto;
+
+      @include xs {
+      max-height: 130px;
+      }
     }
   }
 
