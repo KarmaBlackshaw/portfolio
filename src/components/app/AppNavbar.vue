@@ -93,7 +93,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 .nav-section {
-  background: #171b23;
+  background: lighten($color: $bg-main-dark, $amount: 5%);
   padding-left: 10%;
   padding-right: 10%;
   position: fixed;

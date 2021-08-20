@@ -97,6 +97,7 @@ export default {
   align-items: center;
   position: relative;
   user-select: none;
+  background-color: $bg-main-dark;
 
   .hero--container {
     max-width: $content-width;
