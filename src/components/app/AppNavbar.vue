@@ -93,8 +93,8 @@ export default {
   background: lighten($color: $bg-main-dark, $amount: 5%);
   padding-left: 10%;
   padding-right: 10%;
-  // position: fixed;
-  // z-index: 1;
+  position: fixed;
+  z-index: 1;
   width: 100%;
 }
 

@@ -90,7 +90,7 @@ export default {
 }
 
 .hero {
-  height: calc(100vh - 64px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
