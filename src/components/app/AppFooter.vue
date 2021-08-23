@@ -98,6 +98,7 @@ export default {
 
     .footer-item--name {
       font-size: 0.7em;
+      color: rgb(207, 206, 206);
     }
 
     .footer-item--contacts {

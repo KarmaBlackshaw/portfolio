@@ -1,15 +1,1 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-
-body {
-  background-color: $bg-main-dark;
-  color: #c8d1d8;
-  font-family: "Roboto", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+@import "~@/assets/scss/app/_@index.scss";

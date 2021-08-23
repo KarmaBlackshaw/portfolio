@@ -90,7 +90,7 @@ export default {
 }
 
 .hero {
-  height: 100vh;
+  height: calc(100vh - 64px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,6 +172,7 @@ export default {
       text-align: center;
       font-size: 1em;
       font-weight: light;
+      color: $color-main-dark;
 
       .subtitle--vue {
         color: #40b882;

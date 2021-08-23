@@ -1,9 +1,10 @@
 module.exports = {
   css: {
     loaderOptions: {
-      sass: {
+      scss: {
         additionalData: `
-          @import "@/assets/scss/_global.scss";
+          @import "~@/assets/scss/mixins/_@index.scss";
+          @import "~@/assets/scss/variables/_@index.scss";
         `
       }
     }
