@@ -121,6 +121,7 @@ export default {
       font-weight: bold;
       color: #fff;
       font-size: 4em;
+      margin-bottom: 10px;
 
       @keyframes stretch {
         40% {
@@ -173,13 +174,16 @@ export default {
       font-size: 1em;
       font-weight: light;
       color: $color-main-dark;
+      line-height: 1.5em;
 
       .subtitle--vue {
         color: #40b882;
+        text-decoration: none;
       }
 
       .subtitle--node {
         color: #76b55f;
+        text-decoration: none;
       }
     }
   }

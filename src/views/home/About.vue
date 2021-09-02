@@ -113,8 +113,9 @@ export default {
     }
 
     .about-content {
-      font-weight: 100;
-      font-size: 1.8em;
+      font-weight: 50;
+      font-size: 1.6em;
+      line-height: 1.5em;
       color: $bg-main-dark;
 
       @include xs {
