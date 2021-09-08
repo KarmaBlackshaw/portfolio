@@ -11,7 +11,7 @@
           </h1>
 
           <p class="about-content">
-            For now, it's just me, Ernie Jeash Villahermosa. A web developer with {{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }} of experience. Striving to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuffs. A college graduate who thought developers have a very high salary.
+            For now, it's just me, <span class="bold">Ernie Jeash Villahermosa</span>. A web developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience. Striving to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuffs. A college graduate who thought developers have a very high salary.
           </p>
         </div>
       </div>
@@ -115,7 +115,12 @@ export default {
     .about-content {
       font-weight: 100;
       font-size: 1.8em;
+      line-height: 1.5em;
       color: $bg-main-dark;
+
+      .bold {
+        font-weight: 900;
+      }
 
       @include xs {
         font-size: 0.9em;

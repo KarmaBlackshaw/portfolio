@@ -96,7 +96,9 @@ export default {
   align-items: center;
   position: relative;
   user-select: none;
-  background-color: $bg-main-dark;
+  background: #0F2027;
+  background: -webkit-linear-gradient(0deg, #2C5364, #203A43, #0F2027, $bg-main-dark);
+  background: linear-gradient(0deg, #2C5364, #203A43, #0F2027, $bg-main-dark);
 
   .hero--container {
     max-width: $content-width;
@@ -121,6 +123,7 @@ export default {
       font-weight: bold;
       color: #fff;
       font-size: 4em;
+      margin-bottom: 20px;
 
       @keyframes stretch {
         40% {

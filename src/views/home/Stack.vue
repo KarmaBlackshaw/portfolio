@@ -78,11 +78,11 @@ export default {
         {
           text: 'vuetify',
           img: 'vuetifyjs.svg'
-        },
-        {
-          text: 'netlify',
-          img: 'netlify.svg'
         }
+        // {
+        //   text: 'netlify',
+        //   img: 'netlify.svg'
+        // }
         // {
         //   text: 'VS Code',
         //   img: 'visual-studio-code.svg'
