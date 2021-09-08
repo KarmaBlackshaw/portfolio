@@ -120,6 +120,7 @@ export default {
 
       .bold {
         font-weight: 900;
+        color: #40b882;
       }
 
       @include xs {
