@@ -96,9 +96,15 @@ export default {
   align-items: center;
   position: relative;
   user-select: none;
-  background: #0F2027;
-  background: -webkit-linear-gradient(0deg, #2C5364, #203A43, #0F2027, $bg-main-dark);
-  background: linear-gradient(0deg, #2C5364, #203A43, #0F2027, $bg-main-dark);
+  background: #0f2027;
+  background: radial-gradient(
+    circle,
+    #35ad89 2%,
+    #2c5364 30%,
+    #203a43 50%,
+    #0f2027,
+    $bg-main-dark
+  );
 
   .hero--container {
     max-width: $content-width;
