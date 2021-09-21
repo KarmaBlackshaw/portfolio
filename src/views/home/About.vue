@@ -10,8 +10,6 @@
             Who is this guy?
           </h1>
 
-          {{ $breakpoint.name }} asd
-
           <p class="about-content">
             For now, <span class="bold">Ernie Jeash Villahermosa</span> is just a normal guy. A web developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience. Strives to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuff. A college graduate who thought developers have a very high salary.
           </p>
