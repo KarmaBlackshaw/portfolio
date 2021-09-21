@@ -182,6 +182,7 @@ export default {
       font-size: 1em;
       font-weight: light;
       color: $color-main-dark;
+      line-height: 1.8rem;
 
       .subtitle--vue {
         color: #40b882;
