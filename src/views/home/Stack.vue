@@ -118,6 +118,10 @@ export default {
     font-weight: bold;
     margin-bottom: 20px;
     color: #171b23;
+
+    @include xs {
+      font-size: 1.7em;
+    }
   }
 
   .stack-list {
@@ -149,9 +153,11 @@ export default {
 
       &:hover {
         transform: scale(1.03);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         .item-img {
-          transform: scale(1.09);
+          transform: scale(1.2);
         }
       }
 

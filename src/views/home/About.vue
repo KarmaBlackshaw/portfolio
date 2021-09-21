@@ -116,9 +116,10 @@ export default {
         font-size: 2.5em;
         font-weight: bold;
         margin-bottom: 20px;
+        color: #171b23;
 
         @include xs {
-          font-size: 1.3em;
+          font-size: 1.7em;
         }
       }
 
@@ -134,7 +135,7 @@ export default {
         }
 
         @include xs {
-          font-size: 0.9em;
+          font-size: 1.1em;
         }
 
         @include sm {
