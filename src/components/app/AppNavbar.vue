@@ -108,7 +108,10 @@ export default {
   .nav-item {
     &.nav-item--menu {
       a {
+        text-decoration: none;
         margin-left: 20px;
+        color: white;
+        font-weight: bold;
       }
     }
 
@@ -136,10 +139,13 @@ export default {
 .nav-body {
   transition: max-height 0.4s ease;
   overflow: hidden;
+  color: white;
+  font-weight: bold;
 
   ul li {
-    padding-top: 7px;
-    padding-bottom: 7px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #30363d;
   }
 
