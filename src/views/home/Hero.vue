@@ -130,6 +130,7 @@ export default {
       color: #fff;
       font-size: 4em;
       margin-bottom: 20px;
+      font-family: "Poppins", sans-serif;
 
       @keyframes stretch {
         40% {

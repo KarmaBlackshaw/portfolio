@@ -10,8 +10,10 @@
             Who is this guy?
           </h1>
 
+          {{ $breakpoint.name }} asd
+
           <p class="about-content">
-            For now, it's just me, <span class="bold">Ernie Jeash Villahermosa</span>. A web developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience. Striving to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuffs. A college graduate who thought developers have a very high salary.
+            For now, <span class="bold">Ernie Jeash Villahermosa</span> is just a normal guy. A web developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience. Strives to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuff. A college graduate who thought developers have a very high salary.
           </p>
         </div>
       </div>
@@ -58,16 +60,18 @@ export default {
 <style lang="scss" scoped>
 .about {
   background: white;
-  min-height: 100vh;
+  min-height: calc(100vh + 64px);
   position: relative;
-  user-select: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-align: center;
-  padding-bottom: 64px;
   border-bottom: 1px solid #e1e2e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .about-container {
-    margin-right: auto;
-    margin-left: auto;
+    margin: 20px;
     max-width: $content-width;
     display: flex;
     justify-content: space-between;
@@ -101,30 +105,43 @@ export default {
       }
     }
 
-    .about-title {
-      font-family: "Poppins", sans-serif;
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-bottom: 20px;
-
-      @include xs {
-        font-size: 1.3em;
+    .right-about {
+      img {
+        width: 80%;
+        margin-bottom: 20px;
       }
     }
 
-    .about-content {
-      font-weight: 100;
-      font-size: 1.8em;
-      line-height: 1.5em;
-      color: $bg-main-dark;
+    .left-about {
+      .about-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 20px;
 
-      .bold {
-        font-weight: 900;
-        color: #40b882;
+        @include xs {
+          font-size: 1.3em;
+        }
       }
 
-      @include xs {
-        font-size: 0.9em;
+      .about-content {
+        font-weight: 100;
+        font-size: 1.8em;
+        line-height: 1.8em;
+        color: $bg-main-dark;
+
+        .bold {
+          font-weight: 900;
+          color: #40b882;
+        }
+
+        @include xs {
+          font-size: 0.9em;
+        }
+
+        @include sm {
+          font-size: 1.2em;
+        }
       }
     }
   }
