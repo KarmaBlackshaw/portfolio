@@ -1,5 +1,8 @@
 <template>
-  <section class="nav-section">
+  <section
+    class="nav-section"
+    :style="navbarStyles"
+  >
     <nav class="nav-head">
       <button
         v-if="$breakpoint.xs"
@@ -61,6 +64,11 @@ export default {
         clickedHamburger: false
       },
 
+      windowState: {
+        scrollY: null,
+        outerHeight: null
+      },
+
       tabs: [
         // { text: 'Blog', to: '' },
         // { text: 'Projects', to: '' },
@@ -83,6 +91,35 @@ export default {
         .reduce((acc, curr) => {
           return acc + `${curr[0]}: ${curr[1]};`
         }, '')
+    },
+
+    navbarStyles () {
+      const maxY = window.outerHeight - (window.outerHeight * 0.5)
+      const currY = this.windowState.scrollY
+      const percentage = currY / maxY
+      const alpha = percentage > 1 ? 1 : percentage
+
+      const styles = {
+        'background-color': `rgba(12, 16, 23, ${alpha})`
+      }
+
+      return Object
+        .entries(styles)
+        .reduce((acc, curr) => {
+          return acc + `${curr[0]}: ${curr[1]};`
+        }, '')
+    }
+  },
+
+  mounted () {
+    this.initWindowState()
+    window.onscroll = () => this.initWindowState()
+  },
+
+  methods: {
+    initWindowState () {
+      this.windowState.scrollY = window.scrollY
+      this.windowState.outerHeight = window.outerHeight
     }
   }
 }
@@ -90,7 +127,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav-section {
-  background: lighten($color: $bg-main-dark, $amount: 5%);
+  // background: transparent;
   padding-left: 10%;
   padding-right: 10%;
   position: fixed;
