@@ -26,6 +26,7 @@ module.exports = {
     'arrow-spacing': 'error',
     'block-spacing': 'error',
     'brace-style': 'error',
+    'no-multi-spaces': 'error',
     camelcase: 'off',
     'comma-dangle': 'error',
     'default-case': 'error',

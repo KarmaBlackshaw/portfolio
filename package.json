@@ -10,6 +10,7 @@
   "dependencies": {
     "autoprefixer": "^9.8.6",
     "core-js": "^3.6.5",
+    "date-fns": "^2.24.0",
     "gsap": "file:gsap-bonus.tgz",
     "node-gyp": "^8.1.0",
     "node-sass": "^4.12.0",

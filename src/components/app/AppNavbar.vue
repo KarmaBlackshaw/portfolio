@@ -55,18 +55,17 @@
 </template>
 
 <script>
+import _windows from '@/assets/js/mixins/windows'
+
 export default {
   name: 'AppNavbar',
+
+  mixins: [_windows],
 
   data () {
     return {
       state: {
         clickedHamburger: false
-      },
-
-      windowState: {
-        scrollY: null,
-        outerHeight: null
       },
 
       tabs: [
@@ -108,18 +107,6 @@ export default {
         .reduce((acc, curr) => {
           return acc + `${curr[0]}: ${curr[1]};`
         }, '')
-    }
-  },
-
-  mounted () {
-    this.initWindowState()
-    window.onscroll = () => this.initWindowState()
-  },
-
-  methods: {
-    initWindowState () {
-      this.windowState.scrollY = window.scrollY
-      this.windowState.outerHeight = window.outerHeight
     }
   }
 }

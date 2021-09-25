@@ -4,7 +4,7 @@
     class="hero"
   >
     <div class="hero--container">
-      <div class="hero--banner">
+      <div class="hero--banner-img">
         <code-think class="banner" />
         <!-- <img
           src="@/assets/svg/code-think-css.svg"
@@ -26,35 +26,52 @@
       </div>
 
       <p class="hero--banner-subtitle">
-        I am a web developer from Philippines and I enjoy building web applications with
-
-        <a
-          class="subtitle--vue"
-          href="https://vuejs.org/"
-        >Vue</a> and
-
-        <a
-          class="subtitle--node"
-          href="https://nodejs.org/en/about/"
-        >Node</a>.
+        A {{ age }}-year-old web developer based in Cebu, Philippines
       </p>
+
+      <div class="hero--banner-contacts">
+        <div
+          v-for="(currContact, contactKey) in contacts"
+          :key="contactKey"
+          class="contacts-item--container"
+        >
+          <a
+            class="contacts-item"
+            :href="currContact.value"
+            target="_blank"
+          >
+            <img
+              :src="require(`@/assets/svg/${currContact.img}`)"
+              alt=""
+            >
+          </a>
+        </div>
+      </div>
     </div>
 
-    <a
+    <div
       class="btn-down"
-      href="#about"
+      @click="handleClickScrollDown"
     >
       <img
         src="@/assets/svg/icons/chevron-down-solid.svg"
         alt=""
       >
-    </a>
+    </div>
   </section>
 </template>
 
 <script>
 
+// mixins
+import _contacts from '@/assets/js/mixins/contacts'
+import _windows from '@/assets/js/mixins/windows'
+
+// assets
 import CodeThink from './CodeThink'
+
+// libs
+import _differenceInCalendarYears from 'date-fns/differenceInCalendarYears'
 
 export default {
   name: 'Hero',
@@ -63,11 +80,32 @@ export default {
     CodeThink
   },
 
+  mixins: [_contacts, _windows],
+
   data () {
     return {
+      personal: {
+        birthday: '1998-07-29'
+      },
+
       hero: {
         title: 'Hi, I\'m Ernie Jeash!'
       }
+    }
+  },
+
+  computed: {
+    age () {
+      const today = new Date()
+      const bday = new Date(this.personal.birthday)
+
+      return _differenceInCalendarYears(today, bday)
+    }
+  },
+
+  methods: {
+    handleClickScrollDown () {
+      window.scroll(0, this.windowState.innerHeight - 64)
     }
   }
 }
@@ -109,10 +147,10 @@ export default {
   .hero--container {
     max-width: $content-width;
 
-    .hero--banner {
+    .hero--banner-img {
       display: flex;
       justify-content: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
 
       .banner {
         max-height: 200px;
@@ -184,13 +222,38 @@ export default {
       font-weight: light;
       color: $color-main-dark;
       line-height: 1.8rem;
+      margin-bottom: 20px;
+    }
 
-      .subtitle--vue {
-        color: #40b882;
+    .hero--banner-contacts {
+      display: flex;
+      justify-content: center;
+
+      .contacts-item--container {
+        background: #203a43;
+        margin-right: 5px;
+        margin-left: 5px;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
+      .contacts-item {
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-      .subtitle--node {
-        color: #76b55f;
+        img {
+          height: 15px;
+        }
+
+        &:hover {
+          transform: scale(1.2);
+          filter: grayscale(0%);
+        }
       }
     }
   }
