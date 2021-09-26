@@ -41,6 +41,7 @@
             <span class="text-title">
               Phone:
             </span>
+
             <span class="text-value">
               +63 926 456 6783
             </span>
@@ -68,10 +69,6 @@
 
       <div class="about-bio">
         <div class="left-container">
-          <!-- <p class="about-content">
-            For now, <span class="bold">Ernie Jeash Villahermosa</span> is just a normal guy. A web developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience. Strives to become great at his job! Wants bigger things in life. Loves playing games and reading manwhas. Finds passion in building scripts and sometimes, visual stuff. A college graduate who thought developers have a very high salary.
-          </p> -->
-
           <p>
             Hello! I am <span class="bold">Ernie Jeash Villahermosa</span>, a fullstack web developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience, specializing in developing web applications with Vue and Node.
           </p>
@@ -81,7 +78,7 @@
           </p>
 
           <p>
-            I want bigger things in life so I strive to become great at coding. I love playing games and reading manwhas, latest technologies, developer blogs during my freetime.
+            I want bigger things in life so I strive to become great at coding. I love reading dev blogs, manwhas, latest technologies during my freetime.
           </p>
         </div>
 
@@ -93,14 +90,29 @@
         </div>
       </div>
 
-      <!-- <div class="right-about">
-        <div class="right-container">
-          <img
-            src="@/assets/svg/coding.svg"
-            alt=""
+      <base-section-title>
+        Stack
+      </base-section-title>
+
+      <div class="about-stack">
+        <div class="stack-container">
+          <div
+            v-for="(currStack, stackKey) in stacks"
+            :key="stackKey"
+            class="stack-item"
           >
+            <div class="stack-item--logo">
+              <img
+                :src="require(`@/assets/svg/${currStack.img}`)"
+                alt=""
+              >
+            </div>
+            <div class="stack-item--title">
+              {{ currStack.text }}
+            </div>
+          </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </section>
 </template>
@@ -108,6 +120,61 @@
 <script>
 export default {
   name: 'About',
+
+  data () {
+    return {
+      stacks: [
+        {
+          text: 'Vue',
+          img: 'vue.svg'
+        },
+        {
+          text: 'Node',
+          img: 'nodejs-icon.svg'
+        },
+        {
+          text: 'Koa',
+          img: 'koa.svg'
+        },
+        {
+          text: 'Mysql',
+          img: 'mysql.svg'
+        },
+        {
+          text: 'html 5',
+          img: 'html-5.svg'
+        },
+        {
+          text: 'Css 3',
+          img: 'css-3.svg'
+        },
+        {
+          text: 'Javascript',
+          img: 'javascript.svg'
+        },
+        {
+          text: 'Git',
+          img: 'git-icon.svg'
+        },
+        // {
+        //   text: 'eslint',
+        //   img: 'eslint.svg'
+        // },
+        {
+          text: 'vuetify',
+          img: 'vuetifyjs.svg'
+        }
+        // {
+        //   text: 'netlify',
+        //   img: 'netlify.svg'
+        // }
+        // {
+        //   text: 'VS Code',
+        //   img: 'visual-studio-code.svg'
+        // }
+      ]
+    }
+  },
 
   computed: {
     durationOfExperience () {
@@ -185,38 +252,142 @@ export default {
       }
     }
 
-      .about-bio {
-        font-weight: 100;
-        font-size: 1.2em;
-        line-height: 1.8em;
-        color: $bg-main-dark;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
+    .about-bio {
+      font-weight: 100;
+      font-size: 1.2em;
+      line-height: 1.8em;
+      color: $bg-main-dark;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 50px;
 
-        .left-container, .right-container {
-          width: 50%;
-        }
+      @include xs {
+        flex-direction: column-reverse;
+      }
 
-        .left-container {
-          p {
-            margin-bottom: 20px;
-          }
-        }
+      @include sm {
+        flex-direction: column-reverse;
+      }
 
-        .bold {
-          font-weight: 900;
-          color: #40b882;
+      .left-container,
+      .right-container {
+        width: 45%;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include sm {
+          width: 100%;
         }
 
         @include xs {
-          font-size: 1.1em;
+          width: 100%;
+        }
+      }
+
+      .left-container {
+        p {
+          margin-bottom: 20px;
+        }
+      }
+
+      .right-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-height: 300px;
+
+          @include sm {
+            margin-bottom: 20px;
+            max-height: 200px;
+          }
+
+          @include xs {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .bold {
+        font-weight: 900;
+        color: #40b882;
+      }
+
+      @include xs {
+        font-size: 1.1em;
+      }
+
+      @include sm {
+        font-size: 1.2em;
+      }
+    }
+
+    .about-stack {
+      margin-bottom: 50px;
+
+      .stack-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .stack-item {
+        height: 60px;
+        padding-left: 20px;
+        background: rgb(238, 237, 237);
+        display: flex;
+        margin: 10px;
+        flex: 0 0 23%;
+        width: 24%;
+        transition: all 0.4s ease;
+
+        &:hover {
+          transform: scale(1.03);
+          box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2),
+            0 6px 15px 0 rgba(0, 0, 0, 0.19);
+
+          .stack-item--logo {
+            img {
+              transform: scale(1.3);
+            }
+          }
         }
 
         @include sm {
-          font-size: 1.2em;
+          flex: 0 0 45%;
+        }
+
+        @include xs {
+          flex: 0 0 100%;
+          margin: auto;
+          margin-bottom: 20px;
+        }
+
+        .stack-item--logo {
+          margin-right: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            transition: all 0.4s ease;
+            max-width: 30px;
+          }
+        }
+
+        .stack-item--title {
+          font-family: "Poppins", sans-serif;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: rgb(80, 80, 80);
         }
       }
+    }
   }
 
   .about-title {

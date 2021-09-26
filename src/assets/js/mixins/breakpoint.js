@@ -10,10 +10,11 @@ export default {
       const width = data.width
 
       const breakpoints = {}
-      const isBetween = (num, a, b = a) => num >= a && num <= b
-      const isMax = (num, a) => num <= a
-      const isMin = (num, a) => num >= a
+      const _isBetween = (a, b = a) => width >= a && width <= b
+      const _isMax = a => width <= a
+      const _isMin = a => width >= a
 
+      const screenXsMin = 300
       const screenXsMax = 600
 
       const screenSmMin = 601
@@ -33,11 +34,20 @@ export default {
         ...props
       })
 
-      Object.defineProperty(breakpoints, 'xs', define({ get: () => isMax(width, screenXsMax) }))
-      Object.defineProperty(breakpoints, 'sm', define({ get: () => isBetween(width, screenSmMin, screenSmMax) }))
-      Object.defineProperty(breakpoints, 'md', define({ get: () => isBetween(width, screenMdMin, screenMdMax) }))
-      Object.defineProperty(breakpoints, 'lg', define({ get: () => isBetween(width, screenLgMin, screenLgMax) }))
-      Object.defineProperty(breakpoints, 'xl', define({ get: () => isMin(width, screenXlMin) }))
+      Object.defineProperty(breakpoints, 'xs', define({ get: () => _isMax(screenXsMax) }))
+      Object.defineProperty(breakpoints, 'sm', define({ get: () => _isBetween(screenSmMin, screenSmMax) }))
+      Object.defineProperty(breakpoints, 'md', define({ get: () => _isBetween(screenMdMin, screenMdMax) }))
+      Object.defineProperty(breakpoints, 'lg', define({ get: () => _isBetween(screenLgMin, screenLgMax) }))
+      Object.defineProperty(breakpoints, 'xl', define({ get: () => _isMin(screenXlMin) }))
+
+      Object.defineProperty(breakpoints, 'smAndDown', define({ get: () => _isMax(screenSmMax) }))
+      Object.defineProperty(breakpoints, 'mdAndDown', define({ get: () => _isMax(screenMdMax) }))
+      Object.defineProperty(breakpoints, 'lgAndDown', define({ get: () => _isMax(screenLgMax) }))
+
+      Object.defineProperty(breakpoints, 'xsAndUp', define({ get: () => _isMin(screenXsMin) }))
+      Object.defineProperty(breakpoints, 'smAndUp', define({ get: () => _isMin(screenSmMin) }))
+      Object.defineProperty(breakpoints, 'mdAndUp', define({ get: () => _isMin(screenMdMin) }))
+
       Object.defineProperty(breakpoints, 'name', define({
         get: () => {
           const name = ['xs', 'sm', 'md', 'lg', 'xl']
