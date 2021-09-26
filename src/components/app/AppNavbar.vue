@@ -1,5 +1,8 @@
 <template>
-  <section class="nav-section">
+  <section
+    class="nav-section"
+    :style="navbarStyles"
+  >
     <nav class="nav-head">
       <button
         v-if="$breakpoint.xs"
@@ -52,8 +55,12 @@
 </template>
 
 <script>
+import _windows from '@/assets/js/mixins/windows'
+
 export default {
   name: 'AppNavbar',
+
+  mixins: [_windows],
 
   data () {
     return {
@@ -83,6 +90,23 @@ export default {
         .reduce((acc, curr) => {
           return acc + `${curr[0]}: ${curr[1]};`
         }, '')
+    },
+
+    navbarStyles () {
+      const maxY = window.outerHeight - (window.outerHeight * 0.5)
+      const currY = this.windowState.scrollY
+      const percentage = currY / maxY
+      const alpha = percentage > 1 ? 1 : percentage
+
+      const styles = {
+        'background-color': `rgba(12, 16, 23, ${alpha})`
+      }
+
+      return Object
+        .entries(styles)
+        .reduce((acc, curr) => {
+          return acc + `${curr[0]}: ${curr[1]};`
+        }, '')
     }
   }
 }
@@ -90,7 +114,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav-section {
-  background: lighten($color: $bg-main-dark, $amount: 5%);
+  // background: transparent;
   padding-left: 10%;
   padding-right: 10%;
   position: fixed;
@@ -108,7 +132,10 @@ export default {
   .nav-item {
     &.nav-item--menu {
       a {
+        text-decoration: none;
         margin-left: 20px;
+        color: white;
+        font-weight: bold;
       }
     }
 
@@ -136,10 +163,13 @@ export default {
 .nav-body {
   transition: max-height 0.4s ease;
   overflow: hidden;
+  color: white;
+  font-weight: bold;
 
   ul li {
-    padding-top: 7px;
-    padding-bottom: 7px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #30363d;
   }
 

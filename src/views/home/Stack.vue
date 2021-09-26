@@ -95,13 +95,16 @@ export default {
 
 <style lang="scss" scoped>
 .stack {
+  padding-top: 50px;
+  padding-bottom: 50px;
   background: white;
-  min-height: 100vh;
+  min-height: calc(100vh + 64px);
   position: relative;
   user-select: none;
   text-align: center;
-  padding-top: 74px;
-  padding-bottom: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .stack-container {
     margin-right: auto;
@@ -110,8 +113,15 @@ export default {
   }
 
   .stack-title {
-    font-size: 2em;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
     color: #171b23;
+
+    @include xs {
+      font-size: 1.7em;
+    }
   }
 
   .stack-list {
@@ -135,11 +145,24 @@ export default {
         margin: 10px;
       }
 
+      @include sm {
+        min-height: 100px;
+        width: 140px;
+        margin: 10px;
+      }
+
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.03);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        .item-img {
+          transform: scale(1.2);
+        }
       }
 
       .item-img {
+        transition: all 0.4s ease;
         height: 150px;
         display: flex;
         justify-content: center;
