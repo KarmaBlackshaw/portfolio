@@ -74,6 +74,23 @@
           </p>
 
           <p>
+            I graduated at
+            <a
+              class="bold"
+              href="https://www.lnu.edu.ph/"
+              target="_blank"
+            >Leyte Normal University</a>
+
+            {{ graduationFromNow }} years ago, under the scholarship of
+
+            <a
+              class="bold"
+              href="https://sei.dost.gov.ph/index.php/scholarships/2015"
+              target="_blank"
+            >DOST</a>.
+          </p>
+
+          <p>
             I also work on freelance projects ranging from full stack development, web scraping, and code tutorials.
           </p>
 
@@ -194,12 +211,26 @@ export default {
         year: diffYears,
         month: diffMonths
       }
+    },
+
+    graduationFromNow () {
+      const gradDate = new Date('2019-07-22')
+      const currDate = new Date()
+
+      const startYear = gradDate.getFullYear()
+      const currYear = currDate.getFullYear()
+
+      return currYear - startYear
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .about {
   padding-top: 50px;
   background: white;
@@ -268,6 +299,10 @@ export default {
 
       @include sm {
         flex-direction: column-reverse;
+      }
+
+      a {
+        text-decoration: none;
       }
 
       .left-container,
