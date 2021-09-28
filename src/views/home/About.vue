@@ -273,8 +273,6 @@ export default {
       .left-container,
       .right-container {
         width: 45%;
-        margin-right: auto;
-        margin-left: auto;
 
         @include sm {
           width: 100%;
@@ -286,12 +284,16 @@ export default {
       }
 
       .left-container {
+        margin-right: auto;
+
         p {
           margin-bottom: 20px;
         }
       }
 
       .right-container {
+        margin-left: auto;
+
         display: flex;
         justify-content: center;
         align-items: center;
