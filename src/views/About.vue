@@ -3,8 +3,8 @@
     id="about"
     class="about"
   >
-    <div class="about-container">
-      <h1 class="about-title">
+    <div class="about-container page-container">
+      <h1 class="page-title">
         LEARN MORE ABOUT ME
       </h1>
 
@@ -158,6 +158,10 @@ export default {
           img: 'mysql.svg'
         },
         {
+          text: 'Knex',
+          img: 'knex.svg'
+        },
+        {
           text: 'html 5',
           img: 'html-5.svg'
         },
@@ -232,7 +236,7 @@ export default {
 }
 
 .about {
-  padding-top: 50px;
+  padding-top: 100px;
   background: white;
   min-height: 100vh;
   position: relative;
@@ -242,24 +246,6 @@ export default {
   align-items: center;
 
   .about-container {
-    max-width: $content-width;
-    height: 100%;
-    min-height: 100vh;
-    margin-right: auto;
-    margin-left: auto;
-
-    .about-title {
-      font-family: "Poppins", sans-serif;
-      font-size: 2.5em;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #171b23;
-
-      @include xs {
-        font-size: 1.7em;
-      }
-    }
-
     .about-contact {
       margin-bottom: 50px;
 
@@ -371,11 +357,14 @@ export default {
       }
 
       .stack-item {
+        cursor: pointer;
+        user-select: none;
         height: 60px;
         padding-left: 20px;
-        background: rgb(238, 237, 237);
+        background: rgb(247, 247, 247);
         display: flex;
-        margin: 10px;
+        margin-right: 20px;
+        margin-bottom: 20px;
         flex: 0 0 23%;
         width: 24%;
         transition: all 0.4s ease;
@@ -387,7 +376,7 @@ export default {
 
           .stack-item--logo {
             img {
-              transform: scale(1.3);
+              transform: scale(1.15);
             }
           }
         }

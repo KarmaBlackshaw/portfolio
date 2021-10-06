@@ -20,7 +20,7 @@
       </div>
 
       <div
-        v-if="!$breakpoint.xs"
+        v-if="!$breakpoint.xs && state.routerReady"
         class="nav-item nav-item--menu"
       >
         <router-link
@@ -41,12 +41,8 @@
         <li
           v-for="(currTab, tabKey) in tabs"
           :key="tabKey"
+          @click="$router.push(currTab.to)"
         >
-          <router-link
-            :to="currTab.to"
-            class="nav-body--link"
-          />
-
           {{ currTab.text }}
         </li>
       </ul>
@@ -65,13 +61,15 @@ export default {
   data () {
     return {
       state: {
+        routerReady: false,
         clickedHamburger: false
       },
 
       tabs: [
-        // { text: 'Blog', to: '' },
-        // { text: 'Projects', to: '' },
-        // { text: 'Source', to: '' }
+        { text: 'home', to: { name: 'home' } },
+        { text: 'about', to: { name: 'about' } },
+        { text: 'portfolio', to: { name: 'portfolio' } },
+        { text: 'resume', to: { name: 'resume' } }
       ]
     }
   },
@@ -82,7 +80,7 @@ export default {
       const tabs = this.tabs
 
       const styles = {
-        'max-height': `${state.clickedHamburger ? (tabs.length * 39) + 14 : 0}px`
+        'max-height': `${state.clickedHamburger ? (tabs.length * 39) + 30 : 0}px`
       }
 
       return Object
@@ -93,13 +91,14 @@ export default {
     },
 
     navbarStyles () {
-      const maxY = window.outerHeight - (window.outerHeight * 0.5)
-      const currY = this.windowState.scrollY
-      const percentage = currY / maxY
-      const alpha = percentage > 1 ? 1 : percentage
+      const getAlpha = () => {
+        return this.$route.name === 'home'
+          ? this.state.clickedHamburger ? 0.5 : 0
+          : 1
+      }
 
       const styles = {
-        'background-color': `rgba(12, 16, 23, ${alpha})`
+        'background-color': `rgba(12, 16, 23, ${getAlpha()})`
       }
 
       return Object
@@ -108,13 +107,18 @@ export default {
           return acc + `${curr[0]}: ${curr[1]};`
         }, '')
     }
+  },
+
+  created () {
+    this.$router.onReady(() => {
+      this.state.routerReady = true
+    })
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .nav-section {
-  // background: transparent;
   padding-left: 10%;
   padding-right: 10%;
   position: fixed;
@@ -133,9 +137,29 @@ export default {
     &.nav-item--menu {
       a {
         text-decoration: none;
-        margin-left: 20px;
         color: white;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        transition: all 0.5s ease;
+
+        &.router-link-exact-active {
+          color: rgb(53,172,136);
+        }
+      }
+
+      a:focus {
+        outline: none;
         font-weight: bold;
+      }
+
+      $margin-x: 20px;
+
+      a:not(:last-child) {
+        margin-right: $margin-x;
+      }
+
+      a:not(:first-child) {
+        margin-left: $margin-x;
       }
     }
 
@@ -161,21 +185,25 @@ export default {
 }
 
 .nav-body {
-  transition: max-height 0.4s ease;
+  transition: all 0.4s ease;
   overflow: hidden;
   color: white;
   font-weight: bold;
 
   ul li {
     cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #30363d;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    user-select: none;
   }
 
   ul li:last-child {
     border: none;
-    padding-bottom: 14px;
+    padding-bottom: 30px;
   }
 }
 </style>

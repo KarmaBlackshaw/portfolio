@@ -85,6 +85,10 @@ export default {
         justify-content: center;
         align-items: center;
 
+        @include xs {
+          filter: grayscale(0%);
+        }
+
         img {
           height: 20px;
         }
