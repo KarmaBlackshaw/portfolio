@@ -8,8 +8,6 @@
         <svg-code-think
           class="banner"
           data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-duration="1000"
         />
         <!-- <img
           src="@/assets/svg/code-think-css.svg"
@@ -20,8 +18,7 @@
       <div
         class="hero--banner-title"
         data-aos="fade-up"
-        data-aos-delay="400"
-        data-aos-duration="1000"
+        data-aos-delay="200"
       >
         {{ title }}<span class="cursor">|</span>
       </div>
@@ -29,22 +26,20 @@
       <p
         class="hero--banner-subtitle"
         data-aos="fade-up"
-        data-aos-delay="600"
-        data-aos-duration="1000"
+        data-aos-delay="400"
       >
         A {{ age }}-year-old web developer based in Cebu, Philippines
       </p>
 
       <div
         class="hero--banner-contacts"
-        data-aos="fade-up"
-        data-aos-delay="800"
-        data-aos-duration="1000"
       >
         <div
           v-for="(currContact, contactKey) in contacts"
           :key="contactKey"
           class="contacts-item--container"
+          data-aos="fade-up"
+          :data-aos-delay="600 + (contactKey * 100)"
         >
           <a
             class="contacts-item"
@@ -84,6 +79,8 @@ import SvgCodeThink from './home/SvgCodeThink'
 // libs
 import _differenceInCalendarYears from 'date-fns/differenceInCalendarYears'
 
+const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+
 export default {
   name: 'Home',
 
@@ -120,10 +117,12 @@ export default {
     initTypeTitle () {
       const str = "Hi, I'm Ernie Jeash!"
       let isDelete = false
-      const type = () => {
+
+      const type = async () => {
         this.title = str.substr(0, isDelete ? this.title.length - 1 : this.title.length + 1)
 
         if (this.title === str) {
+          await sleep(2000)
           isDelete = true
         }
 
