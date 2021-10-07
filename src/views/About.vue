@@ -13,7 +13,11 @@
       </base-section-title>
 
       <div class="about-contact">
-        <div class="contact-container">
+        <div
+          v-for="(currAbout, aboutKey) in aboutList"
+          :key="aboutKey"
+          class="contact-container"
+        >
           <img
             class="arrow-right"
             src="@/assets/svg/arrow-right.svg"
@@ -22,42 +26,10 @@
 
           <div class="text-container">
             <span class="text-title">
-              Type:
+              {{ currAbout.title }}
             </span>
             <span class="text-value">
-              Fullstack Web Developer
-            </span>
-          </div>
-        </div>
-
-        <div class="contact-container">
-          <img
-            class="arrow-right"
-            src="@/assets/svg/arrow-right.svg"
-            alt=""
-          >
-
-          <div class="text-container">
-            <span class="text-title">
-              Phone:
-            </span>
-
-            <span class="text-value">
-              +63 926 456 6783
-            </span>
-          </div>
-        </div>
-
-        <div class="contact-container">
-          <img
-            class="arrow-right"
-            src="@/assets/svg/arrow-right.svg"
-            alt=""
-          >
-
-          <div class="text-container">
-            <span class="text-title">
-              Open for consultations and freelancing
+              {{ currAbout.content }}
             </span>
           </div>
         </div>
@@ -114,7 +86,7 @@
       <div class="about-stack">
         <div class="stack-container">
           <div
-            v-for="(currStack, stackKey) in stacks"
+            v-for="(currStack, stackKey) in stacksList"
             :key="stackKey"
             class="stack-item"
           >
@@ -140,7 +112,7 @@ export default {
 
   data () {
     return {
-      stacks: [
+      stacksList: [
         {
           text: 'Vue',
           img: 'vue.svg'
@@ -193,6 +165,20 @@ export default {
         //   text: 'VS Code',
         //   img: 'visual-studio-code.svg'
         // }
+      ],
+
+      aboutList: [
+        {
+          title: 'Type:',
+          content: 'Fullstack Web Developer'
+        },
+        {
+          title: 'Phone:',
+          content: '+63 926 456 6783'
+        },
+        {
+          title: 'Open for consultations and freelancing'
+        }
       ]
     }
   },
