@@ -1,5 +1,5 @@
 <template>
-  <section
+  <header
     class="nav-section"
     :style="navbarStyles"
   >
@@ -47,7 +47,7 @@
         </li>
       </ul>
     </div>
-  </section>
+  </header>
 </template>
 
 <script>
@@ -177,6 +177,7 @@ export default {
   .btn-hamburger {
     position: absolute;
     left: 0;
+    width: 35px;
 
     img {
       height: 24px;
