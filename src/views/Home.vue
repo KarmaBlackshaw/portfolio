@@ -5,32 +5,42 @@
   >
     <div class="hero--container">
       <div class="hero--banner-img">
-        <svg-code-think class="banner" />
+        <svg-code-think
+          class="banner"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-duration="1000"
+        />
         <!-- <img
           src="@/assets/svg/code-think-css.svg"
           alt=""
         > -->
       </div>
 
-      <div class="hero--banner-title">
+      <div
+        class="hero--banner-title"
+        data-aos="fade-up"
+        data-aos-delay="400"
+        data-aos-duration="1000"
+      >
         {{ title }}<span class="cursor">|</span>
-        <!-- <template v-for="(currLetter, letterKey) in hero.title">
-          <span
-            v-if="currLetter !== ' '"
-            :key="letterKey"
-          >{{ currLetter }}</span>
-          <span
-            v-else
-            :key="letterKey"
-          >&nbsp;</span>
-        </template> -->
       </div>
 
-      <p class="hero--banner-subtitle">
+      <p
+        class="hero--banner-subtitle"
+        data-aos="fade-up"
+        data-aos-delay="600"
+        data-aos-duration="1000"
+      >
         A {{ age }}-year-old web developer based in Cebu, Philippines
       </p>
 
-      <div class="hero--banner-contacts">
+      <div
+        class="hero--banner-contacts"
+        data-aos="fade-up"
+        data-aos-delay="800"
+        data-aos-duration="1000"
+      >
         <div
           v-for="(currContact, contactKey) in contacts"
           :key="contactKey"

@@ -23,7 +23,7 @@ export default {
       },
       {
         name: 'Facebook',
-        img: 'facebook.svg',
+        img: 'facebooks.svg',
         value: 'https://www.facebook.com/KarmaBlackshaw/'
       }
     ]
