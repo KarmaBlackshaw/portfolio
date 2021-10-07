@@ -99,11 +99,7 @@ export default {
         birthday: '1998-07-29'
       },
 
-      title: '',
-
-      hero: {
-        typedTitle: ''
-      }
+      title: ''
     }
   },
 
