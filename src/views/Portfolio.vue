@@ -3,7 +3,10 @@
     id="projects"
     class="projects"
   >
-    <div class="projects-container page-container">
+    <div
+      v-if="$env.NODE_ENV === 'development'"
+      class="projects-container page-container"
+    >
       <h1 class="page-title">
         VIEW MY PROJECTS
       </h1>

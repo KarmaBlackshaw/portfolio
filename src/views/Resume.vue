@@ -3,7 +3,10 @@
     id="resume"
     class="resume"
   >
-    <div class="resume-container page-container">
+    <div
+      v-if="$env.NODE_ENV === 'development'"
+      class="resume-container page-container"
+    >
       <h1 class="page-title">
         CHECK MY RESUME
       </h1>
