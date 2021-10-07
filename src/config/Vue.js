@@ -7,6 +7,7 @@ import camelCase from 'lodash/camelCase'
 
 // global mixins
 import breakpoint from '@/assets/js/mixins/breakpoint'
+import env from '@/assets/js/mixins/env'
 
 // Base Components
 const requireComponent = require.context('../components/base', false, (/Base[A-Z]\w+\.(vue|js)$/))
@@ -23,5 +24,6 @@ requireComponent.keys().forEach(fileName => {
 Vue.config.productionTip = false
 
 Vue.mixin(breakpoint)
+Vue.mixin(env)
 
 export default Vue
