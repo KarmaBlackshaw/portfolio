@@ -212,11 +212,9 @@ export default {
   .btn-hamburger {
     position: absolute;
     left: 0;
+    max-width: 35px;
+    min-width: 35px;
     width: 35px;
-
-    img {
-      height: 24px;
-    }
   }
 }
 
