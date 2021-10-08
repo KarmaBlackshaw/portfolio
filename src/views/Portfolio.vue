@@ -184,7 +184,7 @@ export default {
 
         .item-img {
           &:after {
-            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
           }
         }
       }
@@ -203,8 +203,7 @@ export default {
           top: 0;
           left: 0;
           border-radius: 5px;
-          height: 0;
-          background: rgba(0, 0, 0, 0.5);
+          height: 100%;
         }
 
         img {
