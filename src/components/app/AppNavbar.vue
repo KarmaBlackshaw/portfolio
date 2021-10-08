@@ -13,10 +13,6 @@
         <div class="bar-1"></div>
         <div class="bar-2"></div>
         <div class="bar-3"></div>
-        <!-- <img
-          src="@/assets/svg/icons/menu.svg"
-          alt=""
-        > -->
       </button>
 
       <div class="nav-item nav-item--title">
@@ -218,18 +214,18 @@ export default {
     max-width: 35px;
     min-width: 35px;
     width: 35px;
+    min-width: 35px;
 
-.bar-1, .bar-2, .bar-3 {
-  width: 100%;
-  height: 5px;
-  background: white;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  border-radius: 1.5px;
-}
-    // img {
-    //   width: 100%;
-    // }
+    .bar-1,
+    .bar-2,
+    .bar-3 {
+      width: 100%;
+      height: 5px;
+      background: white;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      border-radius: 1.5px;
+    }
   }
 }
 
