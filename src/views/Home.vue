@@ -9,10 +9,6 @@
           class="banner"
           data-aos="fade-up"
         />
-        <!-- <img
-          src="@/assets/svg/code-think-css.svg"
-          alt=""
-        > -->
       </div>
 
       <div
@@ -240,13 +236,6 @@ export default {
       .cursor {
         animation: blink 1s step-end infinite;
       }
-      // span {
-      //   display: inline-block;
-
-      //   &:hover {
-      //     animation: stretch 0.8s ease-in-out;
-      //   }
-      // }
 
       @include xs {
         font-size: 1.7em;
