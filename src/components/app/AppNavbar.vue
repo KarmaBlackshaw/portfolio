@@ -215,6 +215,9 @@ export default {
     min-width: 35px;
     width: 35px;
     min-width: 35px;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 
     .bar-1,
     .bar-2,
@@ -243,8 +246,10 @@ export default {
     font-size: 0.8rem;
     text-transform: uppercase;
     font-size: 0.8rem;
-    user-select: none;
     outline-style: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 
     span {
       position: relative;

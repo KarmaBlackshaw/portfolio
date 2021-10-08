@@ -12,11 +12,33 @@
       </h1>
 
       <base-section-title>
-        Projects
+        Resume
       </base-section-title>
 
       <div class="resume-container">
-        asdfasdfasdasd
+        <div class="resume-container--title">
+          Professional Experience
+        </div>
+
+        <div class="resume-container--items">
+          <div class="resume-item">
+            <div class="resume-item--title">
+              Fullstack Web Developer
+            </div>
+            <div class="resume-item--date">
+              July 2019 - Present
+            </div>
+            <div class="resume-item--company">
+              Cubic Solutions
+            </div>
+            <div class="resume-item--roles">
+              <ul>
+                <li>Research, design, develop, document software for clients</li>
+                <li>Mentor interns</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
