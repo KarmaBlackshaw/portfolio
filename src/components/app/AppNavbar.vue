@@ -215,6 +215,10 @@ export default {
     max-width: 35px;
     min-width: 35px;
     width: 35px;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
