@@ -118,7 +118,7 @@ export default {
 
   .item-container {
     display: flex;
-      flex-wrap: wrap;
+    flex-wrap: wrap;
 
     .projects-item {
       position: relative;
@@ -126,38 +126,88 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 50px;
       flex: 0 0 33%;
 
       @include sm {
-        flex: 0 0 52%;
+        flex: 0 0 49%;
       }
 
       @include xs {
-        flex: 0 0 54%;
+        flex: 0 0 100%;
+      }
+
+      $borders-paddings: 35px;
+      $border-colors: #fff;
+      $border-width: 3px;
+      $border-dimensions: 35px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top: 0 solid transparent;
+        border-left: 0 solid transparent;
+        transition: all 0.5s ease;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 0 solid transparent;
+        border-right: 0 solid transparent;
+        z-index: 999999;
+        transition: all 0.5s ease;
+      }
+
+      &:hover {
+        &:after {
+          top: $borders-paddings;
+          left: $borders-paddings;
+          width: $border-dimensions;
+          height: $border-dimensions;
+          border-top: $border-width solid $border-colors;
+          border-left: $border-width solid $border-colors;
+        }
+
+        &:before {
+          bottom: $borders-paddings;
+          right: $borders-paddings;
+          width: $border-dimensions;
+          height: $border-dimensions;
+          border-bottom: $border-width solid $border-colors;
+          border-right: $border-width solid $border-colors;
+        }
+
+        .item-img {
+          &:after {
+            height: 100%;
+          }
+        }
       }
 
       .item-img {
-        margin-right: 30px;
+        margin: 10px;
         overflow: hidden;
         position: relative;
         width: 100%;
 
         &:after {
-          transition: background 0.5s ease;
-          content: '';
+          transition: all 0.5s ease;
+          content: "";
           position: absolute;
           width: 100%;
-          height: 100%;
           top: 0;
           left: 0;
-          border-radius: 10px;
-        }
-
-        &:hover {
-          &:after {
-            background: rgba(0,0,0, 0.5);
-          }
+          border-radius: 5px;
+          height: 0;
+          background: rgba(0, 0, 0, 0.5);
         }
 
         img {
@@ -172,15 +222,19 @@ export default {
         visibility: hidden;
         opacity: 0;
         transition: all 0.5s ease;
+        pointer-events: none;
 
         &.item-content--hovered {
-opacity: 1;
-        visibility: visible;
+          opacity: 1;
+          visibility: visible;
         }
 
         .content-title {
-          font-size: 1.2em;
+          font-size: 1.5em;
           margin-bottom: 10px;
+          font-weight: bold;
+          color: rgb(241, 241, 241);
+          font-family: "Poppins", sans-serif;
         }
 
         .content-text {
