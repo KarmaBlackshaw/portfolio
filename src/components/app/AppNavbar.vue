@@ -135,6 +135,18 @@ export default {
   width: 100%;
 }
 
+.after-link {
+  content: "";
+  background: rgb(53, 172, 136);
+  position: absolute;
+  width: 0;
+  margin-top: 5px;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  transition: width 0.5s ease;
+}
+
 .nav-head {
   height: 64px;
   display: flex;
@@ -153,15 +165,7 @@ export default {
         position: relative;
 
         &:after {
-          content: "";
-          background: rgb(53, 172, 136);
-          position: absolute;
-          width: 0;
-          margin-top: 5px;
-          bottom: -5px;
-          left: 0;
-          height: 2px;
-          transition: width 0.5s ease;
+          @extend .after-link;
         }
 
         &.router-link-exact-active {
@@ -237,15 +241,7 @@ export default {
       position: relative;
 
       &:after {
-        content: "";
-        background: rgb(53, 172, 136);
-        position: absolute;
-        width: 0;
-        margin-top: 5px;
-        bottom: -5px;
-        left: 0;
-        height: 2px;
-        transition: width 0.5s ease;
+        @extend .after-link;
       }
     }
 
