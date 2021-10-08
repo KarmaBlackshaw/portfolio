@@ -159,7 +159,7 @@ export default {
         height: 0;
         border-bottom: 0 solid transparent;
         border-right: 0 solid transparent;
-        z-index: 999999;
+        z-index: 1;
         transition: all 0.5s ease;
       }
 

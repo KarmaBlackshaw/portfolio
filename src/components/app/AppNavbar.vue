@@ -1,5 +1,6 @@
 <template>
   <header
+    v-click-outside="() => state.clickedHamburger = false"
     class="nav-section"
     :style="navbarStyles"
   >
@@ -41,9 +42,12 @@
         <li
           v-for="(currTab, tabKey) in tabs"
           :key="tabKey"
+          :class="{
+            'is-active': $route.name === currTab.to.name
+          }"
           @click="$router.push(currTab.to)"
         >
-          {{ currTab.text }}
+          <span>{{ currTab.text }}</span>
         </li>
       </ul>
     </div>
@@ -52,9 +56,14 @@
 
 <script>
 import _windows from '@/assets/js/mixins/windows'
+import vClickOutside from 'v-click-outside'
 
 export default {
   name: 'AppNavbar',
+
+  directives: {
+    clickOutside: vClickOutside.directive
+  },
 
   mixins: [_windows],
 
@@ -122,7 +131,7 @@ export default {
   padding-left: 10%;
   padding-right: 10%;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
 }
 
@@ -141,9 +150,32 @@ export default {
         text-transform: uppercase;
         font-size: 0.8rem;
         transition: all 0.5s ease;
+        position: relative;
+
+        &:after {
+          content: "";
+          background: rgb(53, 172, 136);
+          position: absolute;
+          width: 0;
+          margin-top: 5px;
+          bottom: -5px;
+          left: 0;
+          height: 2px;
+          transition: width 0.5s ease;
+        }
 
         &.router-link-exact-active {
-          color: rgb(53,172,136);
+          color: rgb(53, 172, 136);
+
+          &:after {
+            width: 100%;
+          }
+        }
+
+        &:hover {
+          &:after {
+            width: 100%;
+          }
         }
       }
 
@@ -153,7 +185,6 @@ export default {
       }
 
       $margin-x: 20px;
-
       a:not(:last-child) {
         margin-right: $margin-x;
       }
@@ -200,6 +231,31 @@ export default {
     text-transform: uppercase;
     font-size: 0.8rem;
     user-select: none;
+    outline-style: none;
+
+    span {
+      position: relative;
+
+      &:after {
+        content: "";
+        background: rgb(53, 172, 136);
+        position: absolute;
+        width: 0;
+        margin-top: 5px;
+        bottom: -5px;
+        left: 0;
+        height: 2px;
+        transition: width 0.5s ease;
+      }
+    }
+
+    &.is-active {
+      color: rgb(53, 172, 136);
+
+      span:after {
+        width: 100%;
+      }
+    }
   }
 
   ul li:last-child {
