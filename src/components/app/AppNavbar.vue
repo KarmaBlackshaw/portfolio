@@ -78,6 +78,7 @@ export default {
         { text: 'about', to: { name: 'about' } },
         { text: 'portfolio', to: { name: 'portfolio' } },
         { text: 'resume', to: { name: 'resume' } }
+        // { text: 'contact', to: { name: 'resume' } }
       ]
     }
   },
@@ -175,9 +176,9 @@ export default {
           }
         }
 
-        &:hover {
+        &:hover:not(.router-link-exact-active) {
           &:after {
-            width: 100%;
+            width: 50%;
           }
         }
       }
@@ -187,7 +188,7 @@ export default {
         font-weight: bold;
       }
 
-      $margin-x: 20px;
+      $margin-x: 15px;
       a:not(:last-child) {
         margin-right: $margin-x;
       }
@@ -199,6 +200,7 @@ export default {
 
     &.nav-item--title {
       font-family: "Poppins", sans-serif;
+      font-weight: 800;
       color: white;
       font-size: 1.2em;
     }
