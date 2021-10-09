@@ -42,7 +42,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
   user-select: none;
   background-color: $bg-main-dark;
 
