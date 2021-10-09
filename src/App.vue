@@ -8,20 +8,20 @@
       </section>
     </article>
 
-    <app-footer />
+    <!-- <app-footer v-if="$route.name !== 'home'" /> -->
   </main>
 </template>
 
 <script>
 import AppNavbar from '@/components/app/AppNavbar'
-import AppFooter from '@/components/app/AppFooter'
+// import AppFooter from '@/components/app/AppFooter'
 
 export default {
   name: 'App',
 
   components: {
-    AppNavbar,
-    AppFooter
+    AppNavbar
+    // AppFooter
   }
 }
 </script>
