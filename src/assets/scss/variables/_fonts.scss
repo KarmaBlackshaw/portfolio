@@ -1,1 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+@mixin import-font($name, $path, $weight) {
+  $base-url: "/assets/fonts/";
+  font-family: $name;
+  font-weight: $weight;
+  font-style: normal;
+  src: url($base-url + $path + ".eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url($base-url + $path + "-" + $weight + ".eot?#iefix")
+      format("embedded-opentype"),
+    url($base-url + $path + "-" + $weight + ".woff2") format("font-woff2"),
+    url($base-url + $path + "-" + $weight + ".woff") format("font-woff"),
+    url($base-url + $path + "-" + $weight + ".ttf") format("font-truetype"),
+    url($base-url + $path + "-" + $weight + ".svg") format("svg");
+}
+
+// @font-face {
+//   @include import-font(
+//     $name: "Poppins",
+//     $path: "poppins/Poppins",
+//     $weight: 400
+//   );
+// }
+
+// @font-face {
+//   @include import-font(
+//     $name: "Poppins",
+//     $path: "poppins/Poppins",
+//     $weight: 800
+//   );
+// }
+
+// @font-face {
+//   @include import-font(
+//     $name: "Poppins",
+//     $path: "poppins/Poppins",
+//     $weight: 700
+//   );
+// }
+
+// @font-face {
+//   @include import-font($name: "Roboto", $path: "roboto/Roboto", $weight: 400);
+// }
+
+// @font-face {
+//   @include import-font($name: "Roboto", $path: "roboto/Roboto", $weight: 900);
+// }
+
+// @font-face {
+//   @include import-font(
+//     $name: "Montserrat",
+//     $path: "montserrat/montserrat",
+//     $weight: 400
+//   );
+// }
+
+// @font-face {
+//   @include import-font(
+//     $name: "Montserrat",
+//     $path: "montserrat/montserrat",
+//     $weight: 800
+//   );
+// }
