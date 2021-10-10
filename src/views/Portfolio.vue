@@ -41,17 +41,23 @@
               v-if="currProject.link"
               class="content-text"
             >
-              <img
-                class="content-text--icon"
-                src="@/assets/svg/icons/link.svg"
-                alt=""
-              >
-
               <a
+                v-if="currProject.link"
                 :href="currProject.link"
                 target="_blank"
                 class="content-text--label"
-              >{{ currProject.link }}</a>
+              >
+                <icon-eye-fill fill="#FAF9EE" />
+              </a>
+
+              <a
+                v-if="currProject.source"
+                :href="currProject.source"
+                target="_blank"
+                class="content-text--label"
+              >
+                <icon-code-view fill="#FAF9EE" />
+              </a>
             </div>
 
             <div class="content-stack">
@@ -71,8 +77,17 @@
 </template>
 
 <script>
+
+import IconEyeFill from '@/assets/svg/icons/eye-fill'
+import IconCodeView from '@/assets/svg/icons/code-view'
+
 export default {
   name: 'Portfolio',
+
+  components: {
+    IconEyeFill,
+    IconCodeView
+  },
 
   data: () => ({
     state: {
@@ -96,7 +111,8 @@ export default {
         {
           title: '2048 Game',
           img: '2048.png',
-          link: 'https://karma-2048.netlify.app/'
+          link: 'https://karma-2048.netlify.app/',
+          source: 'https://github.com/KarmaBlackshaw/2048'
         }
       ]
     }
