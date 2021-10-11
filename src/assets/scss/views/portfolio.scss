@@ -78,14 +78,14 @@
           border-right: $border-width solid $border-colors;
         }
 
-        .item-img {
+        .project-item__img {
           &:after {
             background: rgba(0, 0, 0, 0.7);
           }
         }
       }
 
-      .item-img {
+      .project-item__img {
         margin: 10px;
         overflow: hidden;
         position: relative;
@@ -109,13 +109,13 @@
         }
       }
 
-      .item-content {
+      .project-item__content {
         position: absolute;
         visibility: hidden;
         opacity: 0;
         transition: all 0.5s ease;
 
-        &.item-content--hovered {
+        &.project-item__content--hovered {
           opacity: 1;
           visibility: visible;
         }

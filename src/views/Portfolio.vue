@@ -20,7 +20,7 @@
           @mouseover="handleMouseover({ item: currProject, index:projectKey })"
           @mouseleave="handleMouseleave()"
         >
-          <div class="item-img">
+          <div class="project-item__img">
             <img
               :src="require(`@/assets/images/portfolio/${currProject.img}`)"
               alt=""
@@ -28,9 +28,9 @@
           </div>
 
           <div
-            class="item-content"
+            class="project-item__content"
             :class="{
-              'item-content--hovered': projectKey === state.cardHovered.index
+              'project-item__content--hovered': projectKey === state.cardHovered.index
             }"
           >
             <div class="content-title">
@@ -107,6 +107,10 @@ export default {
         {
           title: 'Online Course',
           img: 'online-course.png'
+        },
+        {
+          title: 'Covid Management',
+          img: 'qr.png'
         },
         {
           title: '2048 Game',
