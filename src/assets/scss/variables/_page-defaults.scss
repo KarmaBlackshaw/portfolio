@@ -4,11 +4,19 @@
   font-size: 2.5em;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #171b23;
+  color: var(--text-color--primary);
 
   @include xs {
     font-size: 1.7em;
   }
+}
+
+.main-section {
+  padding-top: 100px;
+  background: var(--bg-color--primary);
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
 }
 
 .page-container {

@@ -1,5 +1,25 @@
 $bg-main-dark: #0c1017;
-$bg-main-light: #fff;
 
-$color-main-dark: rgb(207, 206, 206);
-$color-main-light: #0c1017;
+html {
+  &.theme-light {
+    // texts
+    --text-color--primary: #3c4149;
+    --text-color--primary-muted: #818181;
+
+    // backgrounds
+    --bg-color--primary: #fefefe;
+
+    --stack-card-bg: rgb(247, 247, 247);
+  }
+
+  &.theme-dark {
+    // texts
+    --text-color--primary: #fefefe;
+    --text-color--primary-muted: #8a8a8a;
+
+    // backgrounds
+    --bg-color--primary: #171b23;
+
+    --stack-card-bg: #343743;
+  }
+}
