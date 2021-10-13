@@ -7,7 +7,7 @@
     <nav class="nav-head">
       <button
         v-if="$breakpoint.xs"
-        class="btn btn-hamburger"
+        class="nav__hamburger"
         @click="state.clickedHamburger = !state.clickedHamburger"
       >
         <div class="bar-1"></div>
@@ -15,26 +15,53 @@
         <div class="bar-3"></div>
       </button>
 
-      <div class="nav-item nav-item--title">
+      <div class="nav__title">
         karma.dev
       </div>
 
       <div
         v-if="!$breakpoint.xs && state.routerReady"
-        class="nav-item nav-item--menu"
+        class="nav__menu"
       >
         <router-link
           v-for="(currTab, tabKey) in tabs"
           :key="tabKey"
           :to="currTab.to"
+          class="menu__item"
           v-text="currTab.text"
         />
+
+        <button
+          v-if="$env.NODE_ENV === 'development'"
+          class="menu__item btn__toggle"
+          :class="state.theme"
+          @click="toggleTheme"
+        >
+          <transition
+            name="slide-fade"
+            mode="out-in"
+          >
+            <icon-moon-line
+              v-if="state.theme === 'theme-dark'"
+              key="dark"
+              class="btn__icon"
+              fill="rgb(53, 172, 136)"
+            />
+
+            <icon-sun-line
+              v-else
+              key="light"
+              class="btn__icon"
+              fill="rgb(53, 172, 136)"
+            />
+          </transition>
+        </button>
       </div>
     </nav>
 
     <div
       v-if="$breakpoint.xs"
-      class="nav-body"
+      class="nav__body"
       :style="navBodyStyles"
     >
       <ul>
@@ -57,8 +84,16 @@
 import _windows from '@/assets/js/mixins/windows'
 import vClickOutside from 'v-click-outside'
 
+import IconSunLine from '@/assets/svg/icons/sun-line'
+import IconMoonLine from '@/assets/svg/icons/moon-line'
+
 export default {
   name: 'AppNavbar',
+
+  components: {
+    IconSunLine,
+    IconMoonLine
+  },
 
   directives: {
     clickOutside: vClickOutside.directive
@@ -70,7 +105,8 @@ export default {
     return {
       state: {
         routerReady: false,
-        clickedHamburger: false
+        clickedHamburger: false,
+        theme: 'theme-light'
       },
 
       tabs: [
@@ -119,160 +155,25 @@ export default {
   },
 
   created () {
+    document.documentElement.className = 'theme-light'
+    this.state.theme = 'theme-light'
+
     this.$router.onReady(() => {
       this.state.routerReady = true
     })
+  },
+
+  methods: {
+    toggleTheme () {
+      const theme = document.documentElement.className
+      const newTheme = theme === 'theme-light' ? 'theme-dark' : 'theme-light'
+      document.documentElement.className = newTheme
+      this.state.theme = newTheme
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.nav-section {
-  padding-left: 10%;
-  padding-right: 10%;
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-}
-
-.after-link {
-  content: "";
-  background: rgb(53, 172, 136);
-  position: absolute;
-  width: 0;
-  margin-top: 5px;
-  bottom: -5px;
-  left: 0;
-  height: 2px;
-  transition: width 0.5s ease;
-}
-
-.nav-head {
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-
-  .nav-item {
-    &.nav-item--menu {
-      a {
-        text-decoration: none;
-        color: white;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        transition: all 0.5s ease;
-        position: relative;
-
-        &:after {
-          @extend .after-link;
-        }
-
-        &.router-link-exact-active {
-          color: rgb(53, 172, 136);
-
-          &:after {
-            width: 100%;
-          }
-        }
-
-        &:hover:not(.router-link-exact-active) {
-          &:after {
-            width: 50%;
-          }
-        }
-      }
-
-      a:focus {
-        outline: none;
-        font-weight: bold;
-      }
-
-      $margin-x: 15px;
-      a:not(:last-child) {
-        margin-right: $margin-x;
-      }
-
-      a:not(:first-child) {
-        margin-left: $margin-x;
-      }
-    }
-
-    &.nav-item--title {
-      font-family: "Poppins", sans-serif;
-      font-weight: 800;
-      color: white;
-      font-size: 1.2em;
-    }
-  }
-
-  @include xs {
-    justify-content: center;
-  }
-
-  .btn-hamburger {
-    position: absolute;
-    left: 0;
-    max-width: 35px;
-    min-width: 35px;
-    width: 35px;
-    min-width: 35px;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent;
-
-    .bar-1,
-    .bar-2,
-    .bar-3 {
-      width: 100%;
-      height: 5px;
-      background: white;
-      margin-top: 3px;
-      margin-bottom: 3px;
-      border-radius: 1.5px;
-    }
-  }
-}
-
-.nav-body {
-  transition: all 0.4s ease;
-  overflow: hidden;
-  color: white;
-  font-weight: bold;
-
-  ul li {
-    cursor: pointer;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-left: 20px;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    outline-style: none;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent;
-
-    span {
-      position: relative;
-
-      &:after {
-        @extend .after-link;
-      }
-    }
-
-    &.is-active {
-      color: rgb(53, 172, 136);
-
-      span:after {
-        width: 100%;
-      }
-    }
-  }
-
-  ul li:last-child {
-    border: none;
-    padding-bottom: 30px;
-  }
-}
+@import '@/assets/scss/views/app-navbar';
 </style>
