@@ -40,6 +40,9 @@
     border-radius: 5px;
     text-align: center;
     line-height: 0px;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
 
     .btn__icon {
       transition: all 200ms ease;
@@ -106,7 +109,7 @@
       width: 80px;
     }
 
-    $margin-x: 12px;
+    $margin-x: 15px;
     .menu__item:not(:last-child) {
       margin-right: $margin-x;
     }
@@ -118,6 +121,11 @@
 
   @include xs {
     justify-content: center;
+  }
+
+  .btn__toggle--nav {
+    position: absolute;
+    right: 0;
   }
 
   .nav__hamburger {

@@ -19,6 +19,32 @@
         karma.dev
       </div>
 
+      <button
+        v-if="$breakpoint.xs"
+        class="btn__toggle btn__toggle--nav"
+        :class="state.theme"
+        @click="toggleTheme"
+      >
+        <transition
+          name="slide-fade"
+          mode="out-in"
+        >
+          <icon-moon-line
+            v-if="state.theme === 'theme-dark'"
+            key="dark"
+            class="btn__icon"
+            fill="rgb(53, 172, 136)"
+          />
+
+          <icon-sun-line
+            v-else
+            key="light"
+            class="btn__icon"
+            fill="rgb(53, 172, 136)"
+          />
+        </transition>
+      </button>
+
       <div
         v-if="!$breakpoint.xs && state.routerReady"
         class="nav__menu"
