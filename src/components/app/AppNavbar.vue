@@ -58,7 +58,6 @@
         />
 
         <button
-          v-if="$env.NODE_ENV === 'development'"
           class="menu__item btn__toggle"
           :class="state.theme"
           @click="toggleTheme"
