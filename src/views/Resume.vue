@@ -1,7 +1,7 @@
 <template>
   <section
     id="resume"
-    class="resume"
+    class="main-section"
   >
     <div class="resume-container page-container">
       <h1 class="page-title">

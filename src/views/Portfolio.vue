@@ -1,7 +1,7 @@
 <template>
   <section
     id="projects"
-    class="projects"
+    class="main-section"
   >
     <div class="projects-container page-container">
       <h1 class="page-title">
@@ -16,11 +16,11 @@
         <div
           v-for="(currProject, projectKey) in projects"
           :key="projectKey"
-          class="projects-item"
+          class="projects__item"
           @mouseover="handleMouseover({ item: currProject, index:projectKey })"
           @mouseleave="handleMouseleave()"
         >
-          <div class="project-item__img">
+          <div class="projects__img">
             <img
               :src="require(`@/assets/images/portfolio/${currProject.img}`)"
               alt=""
@@ -28,24 +28,24 @@
           </div>
 
           <div
-            class="project-item__content"
+            class="projects__content"
             :class="{
-              'project-item__content--hovered': projectKey === state.cardHovered.index
+              'projects__content--hovered': projectKey === state.cardHovered.index
             }"
           >
-            <div class="content-title">
+            <div class="content__title">
               {{ currProject.title }}
             </div>
 
             <div
               v-if="currProject.link"
-              class="content-text"
+              class="content__text"
             >
               <a
                 v-if="currProject.link"
                 :href="currProject.link"
                 target="_blank"
-                class="content-text--label"
+                class="content__text--label"
               >
                 <icon-eye-fill fill="#FAF9EE" />
               </a>
@@ -54,17 +54,17 @@
                 v-if="currProject.source"
                 :href="currProject.source"
                 target="_blank"
-                class="content-text--label"
+                class="content__text--label"
               >
                 <icon-code-view fill="#FAF9EE" />
               </a>
             </div>
 
-            <div class="content-stack">
+            <div class="content__stack">
               <div
                 v-for="(currStack, stackKey) in currProject.stack"
                 :key="stackKey"
-                class="stack-item"
+                class="stack__item"
               >
                 {{ currStack }}
               </div>

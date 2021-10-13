@@ -1,7 +1,7 @@
 <template>
   <section
     id="about"
-    class="about"
+    class="about main-section"
   >
     <div class="about-container page-container">
       <h1 class="page-title">
@@ -18,12 +18,7 @@
           :key="aboutKey"
           class="contact-container"
         >
-          <img
-            class="arrow-right"
-            src="@/assets/svg/arrow-right.svg"
-            alt=""
-          >
-
+          <span class="arrow arrow--right"></span>
           <div class="text-container">
             <span class="text-title">
               {{ currAbout.title }}

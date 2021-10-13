@@ -1,9 +1,3 @@
-.resume {
-  padding-top: 100px;
-  background: white;
-  position: relative;
-}
-
 .resume-content {
   .resume-content-item {
     &:not(:last-child) {
@@ -13,6 +7,7 @@
     .content--title {
       font-weight: bold;
       margin-bottom: 20px;
+      color: var(--text-color--primary);
     }
 
     .content--container {
@@ -41,15 +36,17 @@
         .resume-item--title {
           font-size: 1.3em;
           margin-bottom: 20px;
+          color: var(--text-color--primary);
         }
 
         .resume-item--company {
           margin-bottom: 5px;
           font-weight: bold;
+          color: var(--text-color--primary);
         }
 
         .resume-item--duration {
-          color: rgb(107, 107, 107);
+          color: var(--text-color--primary-muted);
           font-size: 0.9em;
           font-style: italic;
           margin-bottom: 20px;
@@ -61,6 +58,7 @@
             list-style-type: disc;
 
             li {
+              color: var(--text-color--primary);
               margin-bottom: 10px;
             }
           }
