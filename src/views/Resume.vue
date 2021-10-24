@@ -102,10 +102,13 @@ export default {
           company: 'Cubic Solutions',
           duration: 'July 2019 - Present',
           tasks: [
-            'Research, design, develop, and document software for clients',
-            'Improve existing codebase',
+            'Improving team productivity by cleaning the code',
+            'Incrementally improving processes/code/efficiency',
             'Develop REST APIs',
-            'Mentor new employees'
+            'Mentor new employees',
+            'Integrate data from various backend services ',
+            'Create and maintain software documentation',
+            'Maintain and scale the sites'
           ]
         },
         {
