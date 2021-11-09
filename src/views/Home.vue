@@ -16,7 +16,7 @@
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        {{ title }}<span class="cursor">|</span>
+        Hi, I'm {{ title }}<span class="cursor">|</span>
       </div>
 
       <p
@@ -109,19 +109,21 @@ export default {
 
   methods: {
     initTypeTitle () {
-      const str = "Hi, I'm Ernie Jeash!"
+      const str = ['Ernie Jeash!', 'a Javascript Developer!']
+      let index = 0
       let isDelete = false
 
       const type = async () => {
-        this.title = str.substr(0, isDelete ? this.title.length - 1 : this.title.length + 1)
+        this.title = str[index].substr(0, isDelete ? this.title.length - 1 : this.title.length + 1)
 
-        if (this.title === str) {
+        if (this.title === str[index]) {
           await sleep(2000)
           isDelete = true
         }
 
         if (this.title === '') {
           isDelete = false
+          index = (index + 1) % str.length
         }
 
         setTimeout(type, isDelete ? 100 : 250)

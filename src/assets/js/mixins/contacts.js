@@ -12,6 +12,11 @@ export default {
         value: 'https://github.com/KarmaBlackshaw'
       },
       {
+        name: 'Gitlab',
+        img: 'gitlab.svg',
+        value: 'https://gitlab.com/karmablackshaw'
+      },
+      {
         name: 'LinkedIn',
         img: 'linkedin-icon.svg',
         value: 'https://www.linkedin.com/in/ernie-jeash-villahermosa-576187199/'
