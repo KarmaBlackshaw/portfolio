@@ -30,6 +30,11 @@ export default {
         name: 'Facebook',
         img: 'facebooks.svg',
         value: 'https://www.facebook.com/KarmaBlackshaw/'
+      },
+      {
+        name: 'NPM',
+        img: 'npm-icon.svg',
+        value: 'https://www.npmjs.com/~karmablackshaw'
       }
     ]
   })
