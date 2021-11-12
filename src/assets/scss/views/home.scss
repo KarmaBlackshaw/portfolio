@@ -126,6 +126,7 @@
     .hero--banner-contacts {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
 
       .contacts-item--container {
         background: rgba(0, 0, 0, 0.4);
