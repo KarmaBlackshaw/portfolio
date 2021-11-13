@@ -37,7 +37,7 @@
       <div class="about-bio">
         <div class="left-container">
           <p>
-            Hello! I am <span class="bold">Ernie Jeash Villahermosa</span>, a fullstack web developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience, specializing in developing web applications with Vue and Node.
+            Hello! I am <span class="bold">Ernie Jeash Villahermosa</span>, a fullstack javascript developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience, specializing in developing web applications with Vue and Node.
           </p>
 
           <p>
