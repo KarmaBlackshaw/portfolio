@@ -109,7 +109,7 @@ export default {
 
   methods: {
     initTypeTitle () {
-      const str = ['Ernie Jeash!', 'a Javascript Developer!', 'inlove with Marielle Mae']
+      const str = ['Ernie Jeash!', 'a Javascript Developer!']
       let index = 0
       let isDelete = false
 
