@@ -117,16 +117,8 @@ export default {
           img: 'nodejs-icon.svg'
         },
         {
-          text: 'Koa',
-          img: 'koa.svg'
-        },
-        {
           text: 'Mysql',
           img: 'mysql.svg'
-        },
-        {
-          text: 'Knex',
-          img: 'knex.svg'
         },
         {
           text: 'html 5',
@@ -139,27 +131,7 @@ export default {
         {
           text: 'Javascript',
           img: 'javascript.svg'
-        },
-        {
-          text: 'Git',
-          img: 'git-icon.svg'
-        },
-        // {
-        //   text: 'eslint',
-        //   img: 'eslint.svg'
-        // },
-        {
-          text: 'vuetify',
-          img: 'vuetifyjs.svg'
         }
-        // {
-        //   text: 'netlify',
-        //   img: 'netlify.svg'
-        // }
-        // {
-        //   text: 'VS Code',
-        //   img: 'visual-studio-code.svg'
-        // }
       ],
 
       aboutList: [
