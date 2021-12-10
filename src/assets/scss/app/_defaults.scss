@@ -4,7 +4,9 @@ body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
-  background: var(--bg-color--primary);
+  background-image: url("~@/assets/svg/background.svg");
+  background-color: #1b1f23;
+  background-size: cover;
 }
 
 *,

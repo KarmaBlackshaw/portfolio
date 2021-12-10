@@ -27,57 +27,6 @@
     $border-width: 3px;
     $border-dimensions: 35px;
 
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 0;
-      border-top: 0 solid transparent;
-      border-left: 0 solid transparent;
-      transition: all 0.5s ease;
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 0;
-      height: 0;
-      border-bottom: 0 solid transparent;
-      border-right: 0 solid transparent;
-      z-index: 1;
-      transition: all 0.5s ease;
-    }
-
-    &:hover {
-      &:after {
-        top: $borders-paddings;
-        left: $borders-paddings;
-        width: $border-dimensions;
-        height: $border-dimensions;
-        border-top: $border-width solid $border-colors;
-        border-left: $border-width solid $border-colors;
-      }
-
-      &:before {
-        bottom: $borders-paddings;
-        right: $borders-paddings;
-        width: $border-dimensions;
-        height: $border-dimensions;
-        border-bottom: $border-width solid $border-colors;
-        border-right: $border-width solid $border-colors;
-      }
-
-      .projects__img {
-        &:after {
-          background: rgba(0, 0, 0, 0.7);
-        }
-      }
-    }
-
     .projects__img {
       margin: 10px;
       overflow: hidden;

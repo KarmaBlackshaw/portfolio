@@ -5,7 +5,7 @@
   >
     <div class="hero--container">
       <div class="hero--banner-img">
-        <svg-code-think
+        <home-svg-code-think
           class="banner"
           data-aos="fade-up"
         />
@@ -68,7 +68,7 @@ import _contacts from '@/assets/js/mixins/contacts'
 import _windows from '@/assets/js/mixins/windows'
 
 // assets
-import SvgCodeThink from './home/SvgCodeThink'
+import HomeSvgCodeThink from './components/HomeSvgCodeThink'
 
 // libs
 import _differenceInCalendarYears from 'date-fns/differenceInCalendarYears'
@@ -79,7 +79,7 @@ export default {
   name: 'Home',
 
   components: {
-    SvgCodeThink
+    HomeSvgCodeThink
   },
 
   mixins: [_contacts, _windows],

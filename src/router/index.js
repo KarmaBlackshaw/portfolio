@@ -1,31 +1,33 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const lazyLoad = name => () => import(/* webpackChunkName: "[request]" */ `@/views/${name}.vue`)
+const lazyLoad = name => () => {
+  const [folder, componentName] = name.split('/')
+  return import(/* webpackChunkName: "[request]" */ `@/views/${folder}/${componentName}.vue`)
+}
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: lazyLoad('Home')
+    component: lazyLoad('home/Home')
   },
   {
     path: '/about',
     name: 'about',
-    component: lazyLoad('About')
+    component: lazyLoad('about/About')
   },
   {
     path: '/portfolio',
     name: 'portfolio',
-    component: lazyLoad('Portfolio')
+    component: lazyLoad('portfolio/Portfolio')
   },
   {
     path: '/resume',
     name: 'resume',
-    component: lazyLoad('Resume')
+    component: lazyLoad('resume/Resume')
   }
 ]
 

@@ -13,7 +13,10 @@
 
 .main-section {
   padding-top: 100px;
-  background: var(--bg-color--primary);
+  background-image: url("~@/assets/svg/background.svg");
+  background-color: #1b1f23;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
   min-height: 100vh;
   padding-bottom: 50px;
