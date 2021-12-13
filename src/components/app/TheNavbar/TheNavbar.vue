@@ -2,7 +2,9 @@
   <header
     v-click-outside="() => state.clickedHamburger = false"
     class="nav-section"
-    :style="navbarStyles"
+    :class="{
+      'is-show-body': state.clickedHamburger,
+    }"
   >
     <nav class="nav-head">
       <button
@@ -36,7 +38,10 @@
     <div
       v-if="$breakpoint.xs"
       class="nav__body"
-      :style="navBodyStyles"
+      :class="{
+        'is-open': state.clickedHamburger,
+        'is-close': !state.clickedHamburger
+      }"
     >
       <ul>
         <li
@@ -80,7 +85,7 @@ export default {
         { text: 'about', to: { name: 'about' } },
         { text: 'portfolio', to: { name: 'portfolio' } },
         { text: 'resume', to: { name: 'resume' } }
-        // { text: 'contact', to: { name: 'resume' } }
+        // { text: 'contact', to: { name: 'contact' } }
       ]
     }
   },
@@ -90,8 +95,9 @@ export default {
       const state = this.state
       const tabs = this.tabs
 
+      const maxHeight = (tabs.length * 39) + 30
       const styles = {
-        'max-height': `${state.clickedHamburger ? (tabs.length * 39) + 30 : 0}px`
+        top: `${state.clickedHamburger ? 64 : maxHeight * -1}px`
       }
 
       return Object
@@ -103,9 +109,7 @@ export default {
 
     navbarStyles () {
       const getAlpha = () => {
-        return this.$route.name === 'home'
-          ? this.state.clickedHamburger ? 0.5 : 0
-          : 1
+        return this.state.clickedHamburger ? 0.9 : 0
       }
 
       const styles = {
@@ -121,9 +125,6 @@ export default {
   },
 
   created () {
-    document.documentElement.className = 'theme-light'
-    this.state.theme = 'theme-light'
-
     this.$router.onReady(() => {
       this.state.routerReady = true
     })
