@@ -27,7 +27,7 @@ export default {
   .text {
     margin-right: 10px;
     text-transform: uppercase;
-    color: var(--text-color--primary);
+    color: $text-color--primary;
   }
 
   .line {

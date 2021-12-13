@@ -12,13 +12,14 @@
         About
       </base-section-title>
 
-      <div class="about-contact">
+      <div class="about__body--contact">
         <div
           v-for="(currAbout, aboutKey) in aboutList"
           :key="aboutKey"
-          class="contact-container"
+          class="contact__item"
         >
           <span class="arrow arrow--right"></span>
+
           <div class="text-container">
             <span class="text-title">
               {{ currAbout.title }}
@@ -34,8 +35,8 @@
         Bio
       </base-section-title>
 
-      <div class="about-bio">
-        <div class="left-container">
+      <div class="about__body--bio">
+        <div class="bio__details">
           <p>
             Hello! I am <span class="bold">Ernie Jeash Villahermosa</span>, a fullstack javascript developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience, specializing in developing web applications with Vue and Node.
           </p>
@@ -66,9 +67,11 @@
           </p>
         </div>
 
-        <div class="right-container">
+        <div class="bio__figure">
+          <div class="figure__background"></div>
+
           <img
-            src="@/assets/svg/coding.svg"
+            src="./assets/svg/programming.svg"
             alt=""
           >
         </div>
@@ -78,21 +81,26 @@
         Stack
       </base-section-title>
 
-      <div class="about-stack">
-        <div class="stack-container">
+      <div class="abount__stack--bio">
+        <div class="stack__list">
           <div
             v-for="(currStack, stackKey) in stacksList"
             :key="stackKey"
-            class="stack-item"
+            class="stack__item"
           >
-            <div class="stack-item--logo">
+            <div class="stack__item--logo">
               <img
                 :src="require(`@/assets/svg/${currStack.img}`)"
                 alt=""
               >
             </div>
-            <div class="stack-item--title">
-              {{ currStack.text }}
+            <div class="stack__item--text">
+              <div class="text__title">
+                {{ currStack.text }}
+              </div>
+              <div class="text__subtitle">
+                {{ currStack.since }} years
+              </div>
             </div>
           </div>
         </div>
@@ -107,32 +115,6 @@ export default {
 
   data () {
     return {
-      stacksList: [
-        {
-          text: 'Vue',
-          img: 'vue.svg'
-        },
-        {
-          text: 'Node',
-          img: 'nodejs-icon.svg'
-        },
-        {
-          text: 'Mysql',
-          img: 'mysql.svg'
-        },
-        {
-          text: 'html 5',
-          img: 'html-5.svg'
-        },
-        {
-          text: 'Css 3',
-          img: 'css-3.svg'
-        },
-        {
-          text: 'Javascript',
-          img: 'javascript.svg'
-        }
-      ],
 
       aboutList: [
         {
@@ -151,6 +133,48 @@ export default {
   },
 
   computed: {
+
+    stacksList () {
+      const currDate = new Date()
+
+      const currYear = currDate.getFullYear()
+
+      const getYearsOfExp = year => currYear - year
+
+      return [
+        {
+          text: 'Vue',
+          img: 'vue.svg',
+          since: getYearsOfExp(2019)
+        },
+        {
+          text: 'Node',
+          img: 'nodejs-icon.svg',
+          since: getYearsOfExp(2019)
+        },
+        {
+          text: 'Mysql',
+          img: 'mysql.svg',
+          since: getYearsOfExp(2018)
+        },
+        {
+          text: 'html 5',
+          img: 'html-5.svg',
+          since: getYearsOfExp(2018)
+        },
+        {
+          text: 'Css 3',
+          img: 'css-3.svg',
+          since: getYearsOfExp(2018)
+        },
+        {
+          text: 'Javascript',
+          img: 'javascript.svg',
+          since: getYearsOfExp(2018)
+        }
+      ]
+    },
+
     durationOfExperience () {
       const startDate = new Date('2019-07-22')
       const currDate = new Date()
@@ -184,5 +208,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/views/about';
+@import './styles/about';
 </style>

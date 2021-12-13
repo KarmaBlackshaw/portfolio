@@ -1,5 +1,5 @@
 .resume-content {
-  .resume-content-item {
+  .resume-content__item {
     &:not(:last-child) {
       margin-bottom: 50px;
     }
@@ -7,16 +7,17 @@
     .content--title {
       font-weight: bold;
       margin-bottom: 20px;
-      color: var(--text-color--primary);
+      color: $text-color--primary;
     }
 
     .content--container {
       padding: 0 10px;
 
-      .resume-item {
+      .resume__item {
         border-left: 1px solid rgb(207, 207, 207);
         padding-left: 15px;
         position: relative;
+        color: $text-color--primary;
 
         &:not(:last-child) {
           padding-bottom: 30px;
@@ -33,33 +34,54 @@
           border-radius: 50%;
         }
 
-        .resume-item--title {
+        .resume__item--heading {
           font-size: 1.3em;
           margin-bottom: 20px;
-          color: var(--text-color--primary);
         }
 
-        .resume-item--company {
+        .resume__item--company {
           margin-bottom: 5px;
           font-weight: bold;
-          color: var(--text-color--primary);
         }
 
-        .resume-item--duration {
-          color: var(--text-color--primary-muted);
+        .resume__item--duration {
+          color: $text-color--primary-muted;
           font-size: 0.9em;
           font-style: italic;
           margin-bottom: 20px;
         }
 
-        .resume-item--roles {
+        .resume__item--roles {
+          margin-bottom: 20px;
           ul {
             margin-left: 30px;
             list-style-type: disc;
 
             li {
-              color: var(--text-color--primary);
+              color: $text-color--primary;
               margin-bottom: 10px;
+            }
+          }
+        }
+
+        .resume__item--stack {
+          .stack__title {
+            margin-bottom: 5px;
+            font-weight: bold;
+          }
+
+          .stack__list {
+            display: flex;
+            gap: 10px;
+
+            .stack__item {
+              img {
+                background: white;
+                border-radius: 5px;
+                padding: 8px;
+                width: 45px;
+                height: 45px;
+              }
             }
           }
         }

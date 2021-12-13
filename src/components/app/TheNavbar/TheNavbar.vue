@@ -19,32 +19,6 @@
         karma.dev
       </div>
 
-      <button
-        v-if="$breakpoint.xs"
-        class="btn__toggle btn__toggle--nav"
-        :class="state.theme"
-        @click="toggleTheme"
-      >
-        <transition
-          name="slide-fade"
-          mode="out-in"
-        >
-          <icon-moon-line
-            v-if="state.theme === 'theme-dark'"
-            key="dark"
-            class="btn__icon"
-            fill="rgb(53, 172, 136)"
-          />
-
-          <icon-sun-line
-            v-else
-            key="light"
-            class="btn__icon"
-            fill="rgb(53, 172, 136)"
-          />
-        </transition>
-      </button>
-
       <div
         v-if="!$breakpoint.xs && state.routerReady"
         class="nav__menu"
@@ -56,31 +30,6 @@
           class="menu__item"
           v-text="currTab.text"
         />
-
-        <button
-          class="menu__item btn__toggle"
-          :class="state.theme"
-          @click="toggleTheme"
-        >
-          <transition
-            name="slide-fade"
-            mode="out-in"
-          >
-            <icon-moon-line
-              v-if="state.theme === 'theme-dark'"
-              key="dark"
-              class="btn__icon"
-              fill="rgb(53, 172, 136)"
-            />
-
-            <icon-sun-line
-              v-else
-              key="light"
-              class="btn__icon"
-              fill="rgb(53, 172, 136)"
-            />
-          </transition>
-        </button>
       </div>
     </nav>
 
@@ -109,16 +58,8 @@
 import _windows from '@/assets/js/mixins/windows'
 import vClickOutside from 'v-click-outside'
 
-import IconSunLine from '@/assets/svg/icons/sun-line'
-import IconMoonLine from '@/assets/svg/icons/moon-line'
-
 export default {
-  name: 'AppNavbar',
-
-  components: {
-    IconSunLine,
-    IconMoonLine
-  },
+  name: 'TheNavbar',
 
   directives: {
     clickOutside: vClickOutside.directive
@@ -186,19 +127,10 @@ export default {
     this.$router.onReady(() => {
       this.state.routerReady = true
     })
-  },
-
-  methods: {
-    toggleTheme () {
-      const theme = document.documentElement.className
-      const newTheme = theme === 'theme-light' ? 'theme-dark' : 'theme-light'
-      document.documentElement.className = newTheme
-      this.state.theme = newTheme
-    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/views/app-navbar';
+@import './styles/the-navbar';
 </style>

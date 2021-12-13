@@ -17,9 +17,12 @@
           <PortfolioProjectCard
             v-for="(currProject, projectKey) in projects"
             :key="projectKey"
+            :image="require(`./assets/images/${currProject.img}`)"
+            :data-aos-delay="150 * projectKey"
+            :title="currProject.title"
+            :stack="currProject.stack"
+            data-aos="zoom-in"
             class="projects__item"
-            @mouseover="handleMouseover({ item: currProject, index:projectKey })"
-            @mouseleave="handleMouseleave()"
           />
         </div>
       </div>
@@ -33,6 +36,8 @@ import PortfolioProjectCard from './components/PortfolioProjectCard'
 
 export default {
   name: 'Portfolio',
+
+  title: 'Portfolio',
 
   components: {
     PortfolioProjectCard
@@ -52,21 +57,25 @@ export default {
       return [
         {
           title: 'Job Portal',
-          img: 'job-portal.png'
+          img: 'evsu-job-portal.png',
+          stack: ['vue', 'node']
         },
         {
           title: 'Online Course',
-          img: 'online-course.png'
+          img: 'online-course.png',
+          stack: ['vue', 'node']
         },
         {
           title: 'Covid Management',
-          img: 'qr.png'
+          img: 'online-course.png',
+          stack: ['vue', 'node']
         },
         {
           title: '2048 Game',
           img: '2048.png',
           link: 'https://karma-2048.netlify.app/',
-          source: 'https://github.com/KarmaBlackshaw/2048'
+          source: 'https://github.com/KarmaBlackshaw/2048',
+          stack: ['vue']
         }
       ]
     }

@@ -1,5 +1,16 @@
-.cursor-pointer {
-  cursor: pointer;
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-10px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
 }
 
 .about {
@@ -8,18 +19,18 @@
   align-items: center;
 
   .about-container {
-    .about-contact {
+    .about__body--contact {
       margin-bottom: 50px;
 
-      .contact-container {
+      .contact__item {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         margin-bottom: 10px;
-        color: var(--text-color--primary);
+        color: $text-color--primary;
 
         .arrow {
-          border: solid var(--text-color--primary);
+          border: solid $text-color--primary;
           border-width: 0 3px 3px 0;
           display: inline-block;
           padding: 3px;
@@ -42,11 +53,11 @@
       }
     }
 
-    .about-bio {
+    .about__body--bio {
       font-weight: 100;
       font-size: 1.2em;
       line-height: 1.8em;
-      color: var(--text-color--primary);
+      color: $text-color--primary;
       display: flex;
       justify-content: space-between;
       width: 100%;
@@ -60,12 +71,8 @@
         flex-direction: column-reverse;
       }
 
-      a {
-        text-decoration: none;
-      }
-
-      .left-container,
-      .right-container {
+      .bio__details,
+      .bio__figure {
         width: 45%;
 
         @include sm {
@@ -77,7 +84,7 @@
         }
       }
 
-      .left-container {
+      .bio__details {
         margin-right: auto;
 
         p {
@@ -85,15 +92,34 @@
         }
       }
 
-      .right-container {
+      .bio__figure {
         margin-left: auto;
-
+        border-radius: 10px;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
+        animation: float 6s ease-in-out infinite;
+
+        @include smAndBelow {
+          margin-bottom: 20px;
+        }
+
+        .figure__background {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: #a8ff78; /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+          background: linear-gradient(to right, #78ffd6, #a8ff78);
+          opacity: 0.6;
+          border-radius: 10px;
+        }
 
         img {
+          z-index: 1;
           max-height: 300px;
+          padding: 20px;
 
           @include sm {
             margin-bottom: 20px;
@@ -120,28 +146,38 @@
       }
     }
 
-    .about-stack {
+    .abount__stack--bio {
       margin-bottom: 50px;
 
-      .stack-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+      .stack__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+
+        @include sm {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include xs {
+          grid-template-columns: repeat(1, 1fr);
+        }
       }
 
-      .stack-item {
+      .stack__item {
+        width: 100%;
         cursor: pointer;
         user-select: none;
         height: 60px;
-        padding-left: 20px;
-        background: var(--stack-card-bg);
+        background: #373e42;
         display: flex;
         margin-right: 20px;
-        margin-bottom: 20px;
-        flex: 0 0 23%;
-        width: 24%;
+        border-radius: 5px;
+        overflow: hidden;
         transition: 0.4s ease;
         transition-property: transform, box-shadow;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
 
         &:hover {
           transform: scale(1.03);
@@ -155,36 +191,42 @@
           }
         }
 
-        @include sm {
-          flex: 0 0 45%;
-        }
-
-        @include xs {
-          flex: 0 0 100%;
-          margin: auto;
-          margin-bottom: 20px;
-        }
-
-        .stack-item--logo {
+        .stack__item--logo {
           margin-right: 20px;
           display: flex;
           justify-content: center;
           align-items: center;
+          height: 100%;
+          width: 60px;
+          background: white;
 
           img {
             transition: all 0.4s ease;
-            max-width: 30px;
+            width: 40px;
+            height: 40px;
+            padding: 3px;
           }
         }
 
-        .stack-item--title {
-          font-family: "Poppins", sans-serif;
+        .stack__item--text {
           display: flex;
           justify-content: flex-start;
-          align-items: center;
-          text-transform: uppercase;
-          font-weight: bold;
-          color: var(--text-color--primary);
+          flex-direction: column;
+
+          .text__title {
+            font-family: "Quicksand", sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $text-color--primary;
+            margin-bottom: 4px;
+          }
+
+          .text__subtitle {
+            font-family: "Quicksand", sans-serif;
+            text-transform: uppercase;
+            color: $text-color--primary-muted;
+            font-size: 0.8em;
+          }
         }
       }
     }
@@ -192,6 +234,6 @@
 
   .about-title {
     font-size: 2em;
-    color: #171b23;
+    color: $text-color--primary;
   }
 }

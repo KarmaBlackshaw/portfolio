@@ -4,7 +4,7 @@
   font-size: 2.5em;
   font-weight: bold;
   margin-bottom: 20px;
-  color: var(--text-color--primary);
+  color: $text-color--primary;
 
   @include xs {
     font-size: 1.7em;
@@ -13,8 +13,6 @@
 
 .main-section {
   padding-top: 100px;
-  background-image: url("~@/assets/svg/background.svg");
-  background-color: #1b1f23;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;

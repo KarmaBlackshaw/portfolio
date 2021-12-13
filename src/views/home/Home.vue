@@ -78,6 +78,8 @@ const sleep = time => new Promise(resolve => setTimeout(resolve, time))
 export default {
   name: 'Home',
 
+  title: 'Home',
+
   components: {
     HomeSvgCodeThink
   },

@@ -13,7 +13,7 @@
       </base-section-title>
 
       <div class="resume-content">
-        <div class="resume-content-item">
+        <div class="resume-content__item">
           <div class="content--title">
             Professional Experience
           </div>
@@ -22,21 +22,21 @@
             <div
               v-for="(currResume, resumeKey) in resumeList"
               :key="resumeKey"
-              class="resume-item"
+              class="resume__item"
             >
-              <div class="resume-item--title">
+              <div class="resume__item--heading">
                 {{ currResume.title }}
               </div>
 
-              <div class="resume-item--company">
+              <div class="resume__item--company">
                 {{ currResume.company }}
               </div>
 
-              <div class="resume-item--duration">
+              <div class="resume__item--duration">
                 {{ currResume.duration }}
               </div>
 
-              <div class="resume-item--roles">
+              <div class="resume__item--roles">
                 <ul>
                   <li
                     v-for="(currTask, taskKey) in currResume.tasks"
@@ -46,32 +46,51 @@
                   </li>
                 </ul>
               </div>
+
+              <div class="resume__item--stack">
+                <div class="stack__title">
+                  Stack
+                </div>
+
+                <div class="stack__list">
+                  <div
+                    v-for="(currStack, stackKey) in currResume.stack"
+                    :key="stackKey"
+                    class="stack__item"
+                  >
+                    <img
+                      :src="require(`./assets/svg/${currStack}.svg`)"
+                      alt=""
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="resume-content-item">
+        <div class="resume-content__item">
           <div class="content--title">
             Educational Details
           </div>
 
           <div class="content--container">
-            <div class="resume-item">
-              <div class="resume-item--title">
+            <div class="resume__item">
+              <div class="resume__item--heading">
                 Bachelor of Science in Information Technology
               </div>
 
-              <div class="resume-item--company">
+              <div class="resume__item--company">
                 Leyte Normal University
               </div>
 
-              <div class="resume-item--duration">
+              <div class="resume__item--duration">
                 June 2015 - September 2019
               </div>
 
               <div
                 v-if="0"
-                class="resume-item--roles"
+                class="resume__item--roles"
               >
                 <ul>
                   <li
@@ -94,6 +113,8 @@
 export default {
   name: 'Resume',
 
+  title: 'Resume',
+
   data () {
     return {
       resumeList: [
@@ -101,6 +122,7 @@ export default {
           title: 'Fullstack Web Developer',
           company: 'Cubic Solutions',
           duration: 'July 2019 - Present',
+          stack: ['vue', 'node', 'mysql', 'sass'],
           tasks: [
             'Improving team productivity by cleaning the code',
             'Incrementally improving processes/code/efficiency',
@@ -114,6 +136,7 @@ export default {
         {
           title: 'Freelance',
           duration: 'August 2018 - Present',
+          stack: ['vue', 'node', 'mysql', 'php', 'sass'],
           tasks: [
             'Research, design, develop, and document software for clients'
           ]
@@ -122,6 +145,7 @@ export default {
           title: 'Intern Web Developer',
           company: 'Philhealth',
           duration: 'May 2018 - August 2018',
+          stack: ['mysql', 'php'],
           tasks: [
             'Research, design, and develop web applications',
             'Automate process'
@@ -134,5 +158,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/views/resume';
+@import './styles/resume';
 </style>

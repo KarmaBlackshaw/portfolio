@@ -1,6 +1,6 @@
 <template>
   <main class="app-main">
-    <app-navbar />
+    <TheNavbar />
 
     <article class="main-article">
       <section>
@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import AppNavbar from '@/components/app/AppNavbar'
+import TheNavbar from '@/components/app/TheNavbar/TheNavbar'
 // import AppFooter from '@/components/app/AppFooter'
 
 export default {
   name: 'App',
 
   components: {
-    AppNavbar
+    TheNavbar
     // AppFooter
   }
 }
