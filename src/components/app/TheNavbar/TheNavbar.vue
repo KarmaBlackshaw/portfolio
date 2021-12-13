@@ -90,40 +90,6 @@ export default {
     }
   },
 
-  computed: {
-    navBodyStyles () {
-      const state = this.state
-      const tabs = this.tabs
-
-      const maxHeight = (tabs.length * 39) + 30
-      const styles = {
-        top: `${state.clickedHamburger ? 64 : maxHeight * -1}px`
-      }
-
-      return Object
-        .entries(styles)
-        .reduce((acc, curr) => {
-          return acc + `${curr[0]}: ${curr[1]};`
-        }, '')
-    },
-
-    navbarStyles () {
-      const getAlpha = () => {
-        return this.state.clickedHamburger ? 0.9 : 0
-      }
-
-      const styles = {
-        'background-color': `rgba(12, 16, 23, ${getAlpha()})`
-      }
-
-      return Object
-        .entries(styles)
-        .reduce((acc, curr) => {
-          return acc + `${curr[0]}: ${curr[1]};`
-        }, '')
-    }
-  },
-
   created () {
     this.$router.onReady(() => {
       this.state.routerReady = true

@@ -18,10 +18,10 @@
             v-for="(currProject, projectKey) in projects"
             :key="projectKey"
             :image="require(`./assets/images/${currProject.img}`)"
-            :data-aos-delay="150 * projectKey"
+            :data-aos-delay="200 * projectKey"
             :title="currProject.title"
             :stack="currProject.stack"
-            data-aos="zoom-in"
+            data-aos="flip-right"
             class="projects__item"
           />
         </div>

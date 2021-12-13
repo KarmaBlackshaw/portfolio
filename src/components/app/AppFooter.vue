@@ -12,7 +12,7 @@
         <a
           v-for="(currContact, contactKey) in contacts"
           :key="contactKey"
-          class="contacts-item"
+          class="contacts__figure"
           :href="currContact.value"
           target="_blank"
         >
@@ -78,7 +78,7 @@ export default {
     .footer-item--contacts {
       display: flex;
 
-      .contacts-item {
+      .contacts__figure {
         filter: grayscale(80%);
         transition: all 0.3s ease;
         margin-left: 10px;

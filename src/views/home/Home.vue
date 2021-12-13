@@ -3,48 +3,70 @@
     id="hero"
     class="hero"
   >
-    <div class="hero--container">
-      <div class="hero--banner-img">
-        <home-svg-code-think
-          class="banner"
-          data-aos="fade-up"
-        />
-      </div>
+    <div class="hero__container">
+      <div class="hero__background"></div>
 
-      <div
-        class="hero--banner-title"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        Hi, I'm {{ title }}<span class="cursor">|</span>
-      </div>
+      <div class="hero__body">
+        <div class="hero__figure">
+          <home-svg-code-think
+            class="hero__img"
+            data-aos="fade-up"
+          />
+        </div>
 
-      <p
-        class="hero--banner-subtitle"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-        A {{ age }}-year-old web developer based in Cebu, Philippines
-      </p>
-
-      <div class="hero--banner-contacts">
         <div
-          v-for="(currContact, contactKey) in contacts"
-          :key="contactKey"
-          class="contacts-item--container"
+          class="hero__title"
           data-aos="fade-up"
-          :data-aos-delay="600 + (contactKey * 100)"
+          data-aos-delay="200"
         >
-          <a
-            class="contacts-item"
-            :href="currContact.value"
-            target="_blank"
+          Ernie Jeash Villahermosa
+        </div>
+
+        <p
+          class="hero__subtitle"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          A {{ age }}-year-old <b>Software Developer</b> based in <b>Cebu, Philippines</b>. Web enthusiast. Enjoys creating web applications from frontend to backend until deployment.
+        </p>
+
+        <div class="hero__communicate">
+          <button
+            class="btn communicate__chat"
+            data-aos="fade-up"
+            :data-aos-delay="600"
           >
-            <img
-              :src="require(`@/assets/svg/${currContact.img}`)"
-              alt=""
+            Chat with me
+          </button>
+          <button
+            class="btn communicate__resume"
+            data-aos="fade-up"
+            :data-aos-delay="600"
+          >
+            Resume
+          </button>
+        </div>
+
+        <div class="hero__contacts">
+          <div
+            v-for="(currContact, contactKey) in contacts"
+            :key="contactKey"
+            class="contacts__item"
+            data-aos="fade-up"
+            :data-aos-delay="800 + (contactKey * 100)"
+          >
+            <a
+              class="contacts__figure"
+              :href="currContact.value"
+              target="_blank"
             >
-          </a>
+              <img
+                class="contacts__img"
+                :src="require(`@/assets/svg/${currContact.img}`)"
+                alt=""
+              >
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -73,7 +95,7 @@ import HomeSvgCodeThink from './components/HomeSvgCodeThink'
 // libs
 import _differenceInCalendarYears from 'date-fns/differenceInCalendarYears'
 
-const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+// const sleep = time => new Promise(resolve => setTimeout(resolve, time))
 
 export default {
   name: 'Home',
@@ -112,31 +134,32 @@ export default {
   methods: {
     initTypeTitle () {
       const str = ['Ernie Jeash!', 'a Javascript Developer!']
-      let index = 0
-      let isDelete = false
+      // const index = 0
+      // const isDelete = false
 
-      const type = async () => {
-        this.title = str[index].substr(0, isDelete ? this.title.length - 1 : this.title.length + 1)
+      this.title = str[1]
+      // const type = async () => {
+      //   this.title = str[index].substr(0, isDelete ? this.title.length - 1 : this.title.length + 1)
 
-        if (this.title === str[index]) {
-          await sleep(2000)
-          isDelete = true
-        }
+      //   if (this.title === str[index]) {
+      //     await sleep(2000)
+      //     isDelete = true
+      //   }
 
-        if (this.title === '') {
-          isDelete = false
-          index = (index + 1) % str.length
-        }
+      //   if (this.title === '') {
+      //     isDelete = false
+      //     index = (index + 1) % str.length
+      //   }
 
-        setTimeout(type, isDelete ? 100 : 250)
-      }
+      //   setTimeout(type, isDelete ? 100 : 250)
+      // }
 
-      type()
+      // type()
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/views/home';
+@import './styles/home.scss';
 </style>

@@ -129,7 +129,7 @@
     padding-left: 50px;
     padding-right: 50px;
     transition: all 300ms ease;
-    transition-property: top, opacity;
+    transition-property: top, opacity, background;
 
     &.is-open {
       background: red;
@@ -138,6 +138,7 @@
     }
 
     &.is-close {
+      background: transparent;
       top: -1000;
       opacity: 0;
     }

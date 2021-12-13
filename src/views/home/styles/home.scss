@@ -1,14 +1,16 @@
+@import "~@/assets/scss/variables/@index";
+
 @keyframes float {
   0% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.4);
     transform: translatey(0px);
   }
   50% {
-    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 25px 10px 0px rgba(0, 0, 0, 0);
     transform: translatey(-10px);
   }
   100% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.4);
     transform: translatey(0px);
   }
 }
@@ -54,45 +56,71 @@
 }
 
 .hero {
-  $base-color: #35ad89;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  user-select: none;
-  background: #0f2027;
-  background: radial-gradient(
-    circle,
-    #35ad89 2%,
-    #2c5364 30%,
-    #203a43 50%,
-    #0f2027,
-    $bg-main-dark
-  );
 
-  .hero--container {
+  .hero__container {
     max-width: $content-width;
+    min-width: $content-width;
+    height: calc(100vh - 250px);
+    padding: 50px 200px;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .hero--banner-img {
+    @include smAndBelow {
+      padding: 5px 50px;
+      height: calc(100vh - 200px);
+    }
+
+    .hero__background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #134e5e; /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, #71b280, #134e5e);
+      background: linear-gradient(to bottom, #71b280, #134e5e);
+      opacity: 0.7;
+      border-radius: 0.75em;
+    }
+
+    .hero__body {
+      z-index: 1000;
+      position: relative;
+    }
+
+    .hero__figure {
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
+      width: 100%;
+      height: 100%;
 
-      .banner {
+      @include xs {
+        display: none;
+      }
+
+      .hero__img {
         max-height: 200px;
-        width: auto;
+        width: 100%;
 
         @include xs {
-          max-height: 130px;
+          min-width: 100%;
         }
       }
     }
 
-    .hero--banner-title {
+    .hero__title {
+      color: white;
       text-align: center;
       font-weight: 700;
-      color: #fff;
       font-size: 4em;
       margin-bottom: 20px;
       font-family: "Montserrat", sans-serif;
@@ -112,23 +140,56 @@
       }
     }
 
-    .hero--banner-subtitle {
+    .hero__subtitle {
+      margin-right: auto;
+      margin-left: auto;
       text-align: center;
       font-size: 1em;
-      font-weight: light;
       color: rgb(226, 226, 226);
       line-height: 1.8rem;
       margin-bottom: 20px;
-      font-family: "Montserrat", sans-serif;
+      font-family: "Quicksand", sans-serif;
       font-weight: 300;
+      max-width: 500px;
+
+      b {
+        font-weight: 700;
+      }
     }
 
-    .hero--banner-contacts {
+    .hero__communicate {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      .btn {
+        padding: 12px;
+        min-width: 100px;
+        border-radius: 5px;
+        overflow: hidden;
+        font-size: 0.7em;
+        text-transform: uppercase;
+
+        &.communicate__chat {
+          color: white;
+          background-color: #212428;
+        }
+
+        &.communicate__resume {
+          color: white;
+          background-color: #71b280;
+        }
+      }
+    }
+
+    .hero__contacts {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
 
-      .contacts-item--container {
+      .contacts__item {
         background: rgba(0, 0, 0, 0.4);
         margin-right: 5px;
         margin-left: 5px;
@@ -141,13 +202,13 @@
         cursor: pointer;
 
         &:hover {
-          .contacts-item {
+          .contacts__figure {
             transform: scale(1.2);
           }
         }
       }
 
-      .contacts-item {
+      .contacts__figure {
         transition: all 0.5s ease;
         display: flex;
         justify-content: center;
