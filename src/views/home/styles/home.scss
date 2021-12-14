@@ -73,6 +73,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 100ms ease-in-out;
+    transition-property: min-height;
+
+    @include sm {
+      min-height: 700px;
+    }
+
+    @include md {
+      min-height: 600px;
+    }
 
     @include smAndBelow {
       padding: 5px 50px;
@@ -115,6 +125,10 @@
         @include xs {
           min-width: 100%;
         }
+
+        @include md {
+          max-height: 150px;
+        }
       }
     }
 
@@ -137,6 +151,10 @@
       }
 
       @include sm {
+        font-size: 3em;
+      }
+
+      @include md {
         font-size: 3em;
       }
     }
