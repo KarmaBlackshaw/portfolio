@@ -44,11 +44,6 @@ export default {
   },
 
   data: () => ({
-    state: {
-      cardHovered: {
-        index: null
-      }
-    }
   }),
 
   computed: {
@@ -62,7 +57,7 @@ export default {
         },
         {
           title: 'Online Course',
-          img: 'online-course.png',
+          img: 'online-course-optimized.png',
           stack: ['vue', 'node']
         },
         {
@@ -72,23 +67,12 @@ export default {
         },
         {
           title: '2048 Game',
-          img: '2048.png',
+          img: '2048-optimized.png',
           link: 'https://karma-2048.netlify.app/',
           source: 'https://github.com/KarmaBlackshaw/2048',
           stack: ['vue']
         }
       ]
-    }
-  },
-
-  methods: {
-    handleMouseover ({ index }) {
-      this.state.cardHovered.index = index
-    },
-
-    handleMouseleave () {
-      console.log('leave')
-      this.state.cardHovered.index = null
     }
   }
 }
