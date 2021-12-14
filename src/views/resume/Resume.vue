@@ -119,7 +119,7 @@ export default {
     return {
       resumeList: [
         {
-          title: 'Fullstack Web Developer',
+          title: 'Fullstack Software Developer',
           company: 'Cubic Solutions',
           duration: 'July 2019 - Present',
           stack: ['vue', 'node', 'mysql', 'sass'],
