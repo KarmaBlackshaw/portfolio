@@ -50,7 +50,10 @@
           :class="{
             'is-active': $route.name === currTab.to.name
           }"
-          @click="$router.push(currTab.to)"
+          @click="() => {
+            $router.push(currTab.to)
+            state.clickedHamburger = false
+          }"
         >
           <span>{{ currTab.text }}</span>
         </li>

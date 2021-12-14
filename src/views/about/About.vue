@@ -71,9 +71,19 @@
           <div class="figure__background"></div>
 
           <img
+            v-show="imgLoaded.programming"
             src="./assets/svg/programming.svg"
             alt=""
+            @load="() => imgLoaded.programming = true"
           >
+
+          <base-loading
+            v-if="!imgLoaded.programming"
+            class="figure__loading"
+            size="70"
+            border="2"
+            foreground-color="#242D31"
+          />
         </div>
       </div>
 
@@ -115,6 +125,9 @@ export default {
 
   data () {
     return {
+      imgLoaded: {
+        programming: false
+      },
 
       aboutList: [
         {
@@ -133,7 +146,6 @@ export default {
   },
 
   computed: {
-
     stacksList () {
       const currDate = new Date()
 
