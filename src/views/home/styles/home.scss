@@ -66,6 +66,7 @@
     max-width: $content-width;
     min-width: $content-width;
     height: calc(100vh - 250px);
+    min-height: 400px;
     padding: 50px 200px;
     position: relative;
     animation: float 6s ease-in-out infinite;
