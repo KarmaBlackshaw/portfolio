@@ -57,7 +57,7 @@ export default {
         },
         {
           title: 'Online Course',
-          img: 'online-course-optimized.png',
+          img: 'online-course.png',
           stack: ['vue', 'node']
         },
         {
@@ -67,7 +67,7 @@ export default {
         },
         {
           title: '2048 Game',
-          img: '2048-optimized.png',
+          img: '2048.png',
           link: 'https://karma-2048.netlify.app/',
           source: 'https://github.com/KarmaBlackshaw/2048',
           stack: ['vue']
