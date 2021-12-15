@@ -15,6 +15,17 @@
         <div class="footer__item">
           <div class="footer__title">
             {{ title }}
+
+            <a
+              v-if="href"
+              :href="href"
+              target="__blank"
+            >
+              <img
+                src="../assets/images/icons/link.png"
+                alt=""
+              >
+            </a>
           </div>
 
           <div class="footer__stack">
@@ -52,6 +63,11 @@ export default {
       type: Array,
       default: () => ([]),
       required: true
+    },
+
+    href: {
+      type: String,
+      default: ''
     }
   }
 }
