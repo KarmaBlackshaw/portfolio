@@ -123,6 +123,8 @@
 export default {
   name: 'About',
 
+  title: 'About',
+
   data () {
     return {
       imgLoaded: {
