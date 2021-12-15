@@ -8,7 +8,7 @@
   >
     <nav class="nav-head">
       <button
-        v-if="$breakpoint.xs"
+        v-if="showHamburger"
         class="nav__hamburger"
         @click="state.clickedHamburger = !state.clickedHamburger"
       >
@@ -22,7 +22,7 @@
       </div>
 
       <div
-        v-if="!$breakpoint.xs && state.routerReady"
+        v-if="!showHamburger && state.routerReady"
         class="nav__menu"
       >
         <router-link
@@ -36,7 +36,7 @@
     </nav>
 
     <div
-      v-if="$breakpoint.xs"
+      v-if="showHamburger"
       class="nav__body"
       :class="{
         'is-open': state.clickedHamburger,
@@ -87,9 +87,15 @@ export default {
         { text: 'home', to: { name: 'home' } },
         { text: 'about', to: { name: 'about' } },
         { text: 'portfolio', to: { name: 'portfolio' } },
-        { text: 'resume', to: { name: 'resume' } }
-        // { text: 'contact', to: { name: 'contact' } }
+        { text: 'resume', to: { name: 'resume' } },
+        { text: 'contact', to: { name: 'contact' } }
       ]
+    }
+  },
+
+  computed: {
+    showHamburger () {
+      return this.$breakpoint.isBelow(666)
     }
   },
 
