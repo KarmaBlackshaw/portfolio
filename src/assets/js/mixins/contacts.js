@@ -21,21 +21,21 @@ export default {
         img: 'linkedin-icon.svg',
         value: 'https://www.linkedin.com/in/ernie-jeash-villahermosa-576187199/'
       },
-      {
-        name: 'Stackoverflow',
-        img: 'stackoverflow-icon.svg',
-        value: 'https://stackoverflow.com/users/8749149/karma-blackshaw'
-      },
+      // {
+      //   name: 'Stackoverflow',
+      //   img: 'stackoverflow-icon.svg',
+      //   value: 'https://stackoverflow.com/users/8749149/karma-blackshaw'
+      // },
       {
         name: 'Facebook',
         img: 'facebooks.svg',
         value: 'https://www.facebook.com/KarmaBlackshaw/'
-      },
-      {
-        name: 'NPM',
-        img: 'npm-icon.svg',
-        value: 'https://www.npmjs.com/~karmablackshaw'
       }
+      // {
+      //   name: 'NPM',
+      //   img: 'npm-icon.svg',
+      //   value: 'https://www.npmjs.com/~karmablackshaw'
+      // }
     ]
   })
 }
