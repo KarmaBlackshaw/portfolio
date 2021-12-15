@@ -1,0 +1,175 @@
+@import "~@/assets/scss/@index";
+
+.contact-container {
+  position: relative;
+
+  .card {
+    width: 100%;
+    min-height: 400px;
+    padding: 50px;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    transition: all 100ms ease-in-out;
+    transition-property: min-height, padding;
+
+    @include sm {
+      padding: 30px;
+    }
+
+    @include xs {
+      padding: 25px;
+    }
+
+    .card__background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #134e5e; /* fallback for old browsers */
+      background: -webkit-linear-gradient(to bottom, #71b280, #134e5e);
+      background: linear-gradient(to bottom, #71b280, #134e5e);
+      opacity: 0.7;
+      border-radius: 0.75em;
+
+      img {
+        height: 100%;
+        opacity: 0.1;
+      }
+    }
+
+    .card__body {
+      flex-grow: 1;
+      flex-basis: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      z-index: 1;
+      min-width: 100%;
+
+      @include smAndBelow {
+        flex-direction: column-reverse;
+      }
+
+      .card__email,
+      .card__contact-details {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+
+      .card__email {
+        .email__item {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-top: 30px;
+          }
+
+          .email__label {
+            color: rgb(216, 215, 215);
+            margin-bottom: 5px;
+            font-size: 0.8em;
+            font-family: "Quicksand";
+
+            .label__muted {
+              font-size: 0.79em;
+            }
+          }
+
+          .email__input {
+            input,
+            textarea {
+              border: none;
+              font-family: "Quicksand";
+              outline: none;
+              width: 100%;
+              padding: 15px 10px;
+              border-radius: 5px;
+              font-size: 0.8em;
+              background-color: #212428;
+              color: rgb(216, 215, 215);
+            }
+          }
+
+          .email__btn {
+            padding: 12px;
+            border-radius: 5px;
+            overflow: hidden;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            width: 100%;
+            color: white;
+            background-color: #71b280;
+          }
+        }
+      }
+
+      .card__divider {
+        height: 1px;
+        background-color: rgb(209, 255, 215);
+        visibility: hidden;
+
+        @include smAndBelow {
+          visibility: visible;
+        }
+      }
+
+      .card__contact-details {
+        .details__item {
+          width: 100%;
+          padding: 5px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .details__logo {
+            width: 40px;
+            padding: 10px;
+            margin-right: 10px;
+            background-color: #212428;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include xs {
+              display: none;
+            }
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .details__title {
+            color: rgb(216, 215, 215);
+            margin-bottom: 5px;
+            font-size: 0.8em;
+            font-family: "Quicksand";
+            position: relative;
+          }
+
+          .details__content {
+            color: rgb(240, 238, 238);
+            font-family: "Montserrat";
+            font-size: 0.9em;
+            font-weight: 500;
+            word-break: break-all;
+          }
+
+          .details__heading {
+            text-align: left;
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+            line-height: 1.2em;
+          }
+        }
+      }
+    }
+  }
+}
