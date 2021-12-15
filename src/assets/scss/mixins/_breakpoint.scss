@@ -81,3 +81,21 @@ $screen-xl-min: 1905px;
     @content;
   }
 }
+
+@mixin isBelow($size) {
+  @media (max-width: #{$size}) {
+    @content;
+  }
+}
+
+@mixin isAbove($size) {
+  @media (min-width: #{$size}) {
+    @content;
+  }
+}
+
+@mixin isBetween($minSize, $maxSize) {
+  @media (min-width: #{$minSize}) and (max-width: #{$maxSize}) {
+    @content;
+  }
+}
