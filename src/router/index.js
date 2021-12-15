@@ -28,6 +28,11 @@ const routes = [
     path: '/resume',
     name: 'resume',
     component: lazyLoad('resume/Resume')
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: lazyLoad('contact/Contact')
   }
 ]
 
