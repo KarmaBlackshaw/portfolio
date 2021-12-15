@@ -23,7 +23,11 @@
 
           <div class="card__body">
             <div class="card__email">
-              <div class="email__item">
+              <div
+                class="email__item"
+                data-aos="fade-right"
+                data-aos-delay="0"
+              >
                 <div class="email__label">
                   Name <span class="label__muted">(optional)</span>
                 </div>
@@ -35,7 +39,11 @@
                 </div>
               </div>
 
-              <div class="email__item">
+              <div
+                class="email__item"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              >
                 <div class="email__label">
                   Email
                 </div>
@@ -48,7 +56,11 @@
                 </div>
               </div>
 
-              <div class="email__item">
+              <div
+                class="email__item"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
                 <div class="email__label">
                   Message
                 </div>
@@ -61,7 +73,11 @@
                 </div>
               </div>
 
-              <div class="email__item">
+              <div
+                class="email__item"
+                data-aos="fade-right"
+                data-aos-delay="300"
+              >
                 <button class="email__btn">
                   Send
                 </button>
@@ -71,7 +87,11 @@
             <div class="card__divider"></div>
 
             <div class="card__contact-details">
-              <div class="details__item">
+              <div
+                class="details__item"
+                data-aos="flip-down"
+                data-aos-delay="0"
+              >
                 <div class="details__heading">
                   Have a project in mind? Let's collaborate with that!
                 </div>
@@ -81,6 +101,8 @@
                 v-for="(currContact, contactKey) in contactDetails"
                 :key="contactKey"
                 class="details__item"
+                data-aos="fade-left"
+                :data-aos-delay="100 * (contactKey + 1)"
               >
                 <div class="details__logo">
                   <img
