@@ -40,27 +40,21 @@ export default {
       Object.defineProperty(breakpoints, 'lg', define({ get: () => _isBetween(screenLgMin, screenLgMax) }))
       Object.defineProperty(breakpoints, 'xl', define({ get: () => _isMin(screenXlMin) }))
 
-      Object.defineProperty(breakpoints, 'smAndDown', define({ get: () => _isMax(screenSmMax) }))
-      Object.defineProperty(breakpoints, 'mdAndDown', define({ get: () => _isMax(screenMdMax) }))
-      Object.defineProperty(breakpoints, 'lgAndDown', define({ get: () => _isMax(screenLgMax) }))
+      Object.defineProperty(breakpoints, 'smAndBelow', define({ get: () => _isMax(screenSmMax) }))
+      Object.defineProperty(breakpoints, 'mdAndBelow', define({ get: () => _isMax(screenMdMax) }))
+      Object.defineProperty(breakpoints, 'lgAndBelow', define({ get: () => _isMax(screenLgMax) }))
 
-      Object.defineProperty(breakpoints, 'xsAndUp', define({ get: () => _isMin(screenXsMin) }))
-      Object.defineProperty(breakpoints, 'smAndUp', define({ get: () => _isMin(screenSmMin) }))
-      Object.defineProperty(breakpoints, 'mdAndUp', define({ get: () => _isMin(screenMdMin) }))
+      Object.defineProperty(breakpoints, 'xsAndAbove', define({ get: () => _isMin(screenXsMin) }))
+      Object.defineProperty(breakpoints, 'smAndAbove', define({ get: () => _isMin(screenSmMin) }))
+      Object.defineProperty(breakpoints, 'mdAndAbove', define({ get: () => _isMin(screenMdMin) }))
 
       Object.defineProperty(breakpoints, 'name', define({
-        get: () => {
-          const name = ['xs', 'sm', 'md', 'lg', 'xl']
-
-          for (let i = 0; i < name.length; i++) {
-            const curr = name[i]
-
-            if (breakpoints[curr]) {
-              return curr
-            }
-          }
-        }
+        get: () => ['xs', 'sm', 'md', 'lg', 'xl'].find(curr => breakpoints[curr])
       }))
+
+      Object.defineProperty(breakpoints, 'isBelow', define({ value: size => _isMax(size) }))
+      Object.defineProperty(breakpoints, 'isAbove', define({ value: size => _isBetween(size) }))
+      Object.defineProperty(breakpoints, 'isBetween', define({ value: (minSize, maxSize) => _isBetween(minSize, maxSize) }))
 
       return breakpoints
     }
