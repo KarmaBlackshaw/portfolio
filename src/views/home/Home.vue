@@ -3,19 +3,19 @@
     id="hero"
     class="hero"
   >
-    <div class="hero__container">
-      <div class="hero__background"></div>
+    <div class="card">
+      <div class="card__background"></div>
 
-      <div class="hero__body">
-        <div class="hero__figure">
+      <div class="card__body">
+        <div class="card__figure">
           <home-svg-code-think
-            class="hero__img"
+            class="card__img"
             data-aos="fade-up"
           />
         </div>
 
         <div
-          class="hero__title"
+          class="card__title"
           data-aos="fade-up"
           data-aos-delay="200"
         >
@@ -23,14 +23,14 @@
         </div>
 
         <p
-          class="hero__subtitle"
+          class="card__subtitle"
           data-aos="fade-up"
           data-aos-delay="400"
         >
           A {{ age }}-year-old <b>Software Developer</b> based in <b>Cebu, Philippines</b>. Web enthusiast. Enjoys creating web applications from frontend to backend until deployment.
         </p>
 
-        <div class="hero__communicate">
+        <div class="card__communicate">
           <button
             class="btn communicate__chat"
             data-aos="fade-up"
@@ -47,7 +47,7 @@
           </button>
         </div>
 
-        <div class="hero__contacts">
+        <div class="card__contacts">
           <div
             v-for="(currContact, contactKey) in contacts"
             :key="contactKey"
