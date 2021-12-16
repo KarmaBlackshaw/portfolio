@@ -192,6 +192,13 @@
         overflow: hidden;
         font-size: 0.7em;
         text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+
+        &:active,
+        &:focus {
+          outline: none;
+        }
 
         &.communicate__chat {
           color: white;

@@ -31,20 +31,24 @@
         </p>
 
         <div class="card__communicate">
-          <button
+          <a
             class="btn communicate__chat"
             data-aos="fade-up"
             :data-aos-delay="600"
+            @click="$router.push({name: 'contact'})"
           >
             Chat with me
-          </button>
-          <button
+          </a>
+
+          <a
             class="btn communicate__resume"
             data-aos="fade-up"
-            :data-aos-delay="600"
+            :data-aos-delay="800"
+            download="ernie-jeash-villahermosa.pdf"
+            href="/files/resume.pdf"
           >
             Resume
-          </button>
+          </a>
         </div>
 
         <div class="card__contacts">
