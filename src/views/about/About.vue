@@ -96,20 +96,26 @@
           <div
             v-for="(currStack, stackKey) in stacksList"
             :key="stackKey"
-            class="stack__item"
+            data-aos="fade-up"
+            :data-aos-delay="200 * stackKey"
           >
-            <div class="stack__item--logo">
-              <img
-                :src="require(`@/assets/svg/${currStack.img}`)"
-                alt=""
-              >
-            </div>
-            <div class="stack__item--text">
-              <div class="text__title">
-                {{ currStack.text }}
+            <div
+              class="stack__item"
+            >
+              <div class="stack__item--logo">
+                <img
+                  :src="require(`./assets/images/${currStack.img}.png`)"
+                  alt=""
+                >
               </div>
-              <div class="text__subtitle">
-                {{ currStack.since }} years
+
+              <div class="stack__item--text">
+                <div class="text__title">
+                  {{ currStack.text }}
+                </div>
+                <div class="text__subtitle">
+                  {{ currStack.since }} years
+                </div>
               </div>
             </div>
           </div>
@@ -158,32 +164,32 @@ export default {
       return [
         {
           text: 'Vue',
-          img: 'vue.svg',
+          img: 'vue',
           since: getYearsOfExp(2019)
         },
         {
           text: 'Node',
-          img: 'nodejs-icon.svg',
+          img: 'nodejs',
           since: getYearsOfExp(2019)
         },
         {
           text: 'Mysql',
-          img: 'mysql.svg',
+          img: 'mysql',
           since: getYearsOfExp(2018)
         },
         {
           text: 'html 5',
-          img: 'html-5.svg',
+          img: 'html',
           since: getYearsOfExp(2018)
         },
         {
           text: 'Css 3',
-          img: 'css-3.svg',
+          img: 'css',
           since: getYearsOfExp(2018)
         },
         {
           text: 'Javascript',
-          img: 'javascript.svg',
+          img: 'javascript',
           since: getYearsOfExp(2018)
         }
       ]
