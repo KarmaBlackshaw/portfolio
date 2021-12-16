@@ -1,3 +1,6 @@
+/**
+import email from '@/config/email'
+ */
 import email from 'emailjs-com'
 
 const serviceId = process.env.VUE_APP_EMAIL_SERVICE_ID
@@ -10,13 +13,7 @@ export default {
    * from_email
    * message
    */
-  async send (templateParams) {
-    try {
-      const response = await email.send(serviceId, templateId, templateParams, userId)
-
-      return response
-    } catch (error) {
-      throw error
-    }
+  send (templateParams) {
+    return email.send(serviceId, templateId, templateParams, userId)
   }
 }
