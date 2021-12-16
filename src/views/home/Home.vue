@@ -62,7 +62,7 @@
             >
               <img
                 class="contacts__img"
-                :src="require(`@/assets/svg/${currContact.img}`)"
+                :src="require(`./assets/images/icons/${currContact.img}.png`)"
                 alt=""
               >
             </a>

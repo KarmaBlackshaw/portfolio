@@ -3,39 +3,29 @@ export default {
     contacts: [
       {
         name: 'Email',
-        img: 'google-gmail.svg',
+        img: 'gmail',
         value: 'mailto:irenesejah29@gmail.com'
       },
       {
         name: 'Github',
-        img: 'github-icon.svg',
+        img: 'github',
         value: 'https://github.com/KarmaBlackshaw'
       },
       {
         name: 'Gitlab',
-        img: 'gitlab.svg',
+        img: 'gitlab',
         value: 'https://gitlab.com/karmablackshaw'
       },
       {
         name: 'LinkedIn',
-        img: 'linkedin-icon.svg',
+        img: 'linkedin',
         value: 'https://www.linkedin.com/in/ernie-jeash-villahermosa-576187199/'
       },
-      // {
-      //   name: 'Stackoverflow',
-      //   img: 'stackoverflow-icon.svg',
-      //   value: 'https://stackoverflow.com/users/8749149/karma-blackshaw'
-      // },
       {
         name: 'Facebook',
-        img: 'facebooks.svg',
+        img: 'facebook',
         value: 'https://www.facebook.com/KarmaBlackshaw/'
       }
-      // {
-      //   name: 'NPM',
-      //   img: 'npm-icon.svg',
-      //   value: 'https://www.npmjs.com/~karmablackshaw'
-      // }
     ]
   })
 }
