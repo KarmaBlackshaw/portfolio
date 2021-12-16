@@ -95,7 +95,7 @@ export default {
 
   computed: {
     showHamburger () {
-      return this.$breakpoint.isBelow(666)
+      return this.$breakpoint.isBelow(782)
     }
   },
 

@@ -25,7 +25,7 @@
     position: relative;
     z-index: 101;
 
-    @include isBelow(666px) {
+    @include isBelow(782px) {
       justify-content: center;
     }
 
