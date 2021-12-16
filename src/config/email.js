@@ -1,17 +1,22 @@
-import { init } from 'emailjs-com'
-const axios = require('axios').create({
-  baseUrl: 'https://api.emailjs.com/api/v1.0/email'
-})
+import email from 'emailjs-com'
 
-init('user_lsCDj8iNa6sBV8mWNkwiT')
+const serviceId = process.env.VUE_APP_EMAIL_SERVICE_ID
+const templateId = process.env.VUE_APP_EMAIL_TEMPLATE_ID
+const userId = process.env.VUE_APP_EMAIL_USER_ID
 
-const data = {
-  template_id: 'template_q3mpmnp',
-  service_id: 'service_k3twis8',
-  user_id: 'user_lsCDj8iNa6sBV8mWNkwiT'
-};
+export default {
+  /**
+   * from_name
+   * from_email
+   * message
+   */
+  async send (templateParams) {
+    try {
+      const response = await email.send(serviceId, templateId, templateParams, userId)
 
-(async () => {
-  const response = await axios.post('/send', data)
-  console.log(response)
-})()
+      return response
+    } catch (error) {
+      throw error
+    }
+  }
+}
