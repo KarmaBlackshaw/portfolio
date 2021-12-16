@@ -59,7 +59,7 @@
                     class="stack__item"
                   >
                     <img
-                      :src="require(`./assets/svg/${currStack}.svg`)"
+                      :src="require(`./assets/images/icons/${currStack}.png`)"
                       alt=""
                     >
                   </div>
