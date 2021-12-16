@@ -83,10 +83,12 @@
                 </div>
               </div>
 
-              <div class="email__item">
+              <div
+                class="email__item"
+                data-aos="fade-right"
+                data-aos-delay="300"
+              >
                 <button
-                  data-aos="fade-right"
-                  data-aos-delay="300"
                   class="email__btn"
                   type="submit"
                   :disabled="!forms.email.is_valid"
