@@ -63,10 +63,6 @@
         .email__item {
           margin-bottom: 10px;
 
-          &:last-child {
-            margin-top: 30px;
-          }
-
           .email__label {
             color: rgb(216, 215, 215);
             margin-bottom: 5px;
@@ -90,10 +86,12 @@
               font-size: 0.8em;
               background-color: #212428;
               color: rgb(216, 215, 215);
+              margin-bottom: 5px;
             }
           }
 
           .email__btn {
+            margin-top: 30px;
             padding: 12px;
             border-radius: 5px;
             overflow: hidden;
@@ -101,7 +99,15 @@
             text-transform: uppercase;
             width: 100%;
             color: white;
-            background-color: #71b280;
+            background-color: #6abb7d;
+            transition: all 300ms ease;
+            transition-property: background-color, color;
+
+            &:disabled {
+              background-color: #5d9269;
+              color: rgb(223, 221, 221);
+              cursor: not-allowed;
+            }
           }
         }
       }
