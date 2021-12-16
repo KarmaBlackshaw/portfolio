@@ -32,7 +32,7 @@
             <img
               v-for="(currStack, stackKey) in stack"
               :key="stackKey"
-              :src="require(`../assets/svg/${currStack}.svg`)"
+              :src="require(`../assets/images/icons/${currStack}.png`)"
               alt=""
             >
           </div>
