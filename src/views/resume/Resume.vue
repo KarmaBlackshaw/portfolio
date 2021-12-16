@@ -57,6 +57,8 @@
                     v-for="(currStack, stackKey) in currResume.stack"
                     :key="stackKey"
                     class="stack__item"
+                    data-aos="zoom-in"
+                    :data-aos-delay="100 * stackKey"
                   >
                     <img
                       :src="require(`./assets/images/icons/${currStack}.png`)"

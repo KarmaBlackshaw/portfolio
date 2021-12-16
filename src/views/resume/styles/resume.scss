@@ -75,12 +75,21 @@
             gap: 10px;
 
             .stack__item {
+              width: 45px;
+              height: 45px;
+              overflow: hidden;
+              border-radius: 5px;
+
               img {
                 background: white;
-                border-radius: 5px;
                 padding: 8px;
-                width: 45px;
-                height: 45px;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.5s ease;
+
+                &:hover {
+                  transform: scale(1.1);
+                }
               }
             }
           }
