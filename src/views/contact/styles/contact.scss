@@ -69,6 +69,10 @@
             font-size: 0.8em;
             font-family: "Quicksand";
 
+            @include smAndBelow {
+              font-size: 0.9em;
+            }
+
             .label__muted {
               font-size: 0.79em;
             }
