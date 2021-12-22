@@ -45,7 +45,6 @@
       flex-basis: 0;
       display: flex;
       justify-content: space-between;
-      gap: 50px;
       z-index: 1;
       min-width: 100%;
 
@@ -120,6 +119,8 @@
         height: 1px;
         background-color: rgb(209, 255, 215);
         visibility: hidden;
+        margin-top: 30px;
+        margin-bottom: 30px;
 
         @include smAndBelow {
           visibility: visible;

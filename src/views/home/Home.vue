@@ -19,7 +19,7 @@
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Ernie Jeash Villahermosa
+          <p>Ernie Jeash</p> <p>Villahermosa</p>
         </div>
 
         <p

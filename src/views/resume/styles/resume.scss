@@ -72,13 +72,18 @@
 
           .stack__list {
             display: flex;
-            gap: 10px;
+            flex-wrap: wrap;
 
             .stack__item {
               width: 45px;
               height: 45px;
               overflow: hidden;
               border-radius: 5px;
+              margin-bottom: 5px;
+
+              &:not(:last-child) {
+                margin-right: 5px;
+              }
 
               img {
                 background: white;

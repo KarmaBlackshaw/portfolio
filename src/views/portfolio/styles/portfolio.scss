@@ -6,14 +6,18 @@
 
 .projects__list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 
-  @include mdAndBelow {
-    grid-template-columns: 1fr 1fr;
+  @include lgAndBelow {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  @include xs {
+  @include mdAndBelow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include smAndBelow {
     grid-template-columns: 1fr;
   }
 
