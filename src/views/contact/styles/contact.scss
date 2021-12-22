@@ -116,14 +116,12 @@
       }
 
       .card__divider {
-        height: 1px;
-        background-color: rgb(209, 255, 215);
-        visibility: hidden;
-        margin-top: 30px;
-        margin-bottom: 30px;
+        margin: 30px;
 
         @include smAndBelow {
-          visibility: visible;
+          margin-left: 0;
+          height: 1px;
+          background-color: rgb(209, 255, 215);
         }
       }
 
