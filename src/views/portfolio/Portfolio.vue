@@ -54,7 +54,7 @@ export default {
         {
           title: 'Job Portal',
           img: 'evsu-job-portal.png',
-          href: 'http://evsu.jeash.tech',
+          href: 'http://evsu.jeash.store',
           stack: ['vue', 'node']
         },
         {
