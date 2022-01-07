@@ -49,7 +49,7 @@
               target="_blank"
             >Leyte Normal University</a>
 
-            {{ graduationFromNow }} years ago, under the scholarship of
+            {{ graduationFromNow }} years ago with a Bachelors degree in Information Technology, under the scholarship of
 
             <a
               class="bold"
