@@ -12,7 +12,7 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.22.0",
     "core-js": "^3.6.5",
-    "date-fns": "^2.24.0",
+    "date-fns": "^2.28.0",
     "emailjs-com": "^3.2.0",
     "gsap": "file:src/assets/js/libs/gsap-bonus.tgz",
     "joi": "^17.5.0",
