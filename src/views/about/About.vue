@@ -38,7 +38,7 @@
       <div class="about__body--bio">
         <div class="bio__details">
           <p>
-            Hello! I am <span class="bold">Ernie Jeash Villahermosa</span>, a fullstack javascript developer with <span class="bold">{{ durationOfExperience.year }} years and {{ durationOfExperience.month }} {{ durationOfExperience.month > 1 ? 'months' : 'month' }}</span> of experience, specializing in developing web applications with Vue and Node.
+            Hello! I am <span class="bold">Ernie Jeash Villahermosa</span>, a fullstack javascript developer with <span class="bold">{{ durationOfExperience.years }} years and {{ durationOfExperience.months }} {{ durationOfExperience.months > 1 ? 'months' : 'month' }}</span> of experience, specializing in developing web applications with Vue and Node.
           </p>
 
           <p>
@@ -126,6 +126,8 @@
 </template>
 
 <script>
+import differenceInMonths from 'date-fns/differenceInMonths'
+
 export default {
   name: 'About',
 
@@ -199,18 +201,13 @@ export default {
       const startDate = new Date('2019-07-22')
       const currDate = new Date()
 
-      const startYear = startDate.getFullYear()
-      const currYear = currDate.getFullYear()
-
-      const startMonth = startDate.getMonth()
-      const currMonth = currDate.getMonth()
-
-      const diffYears = currYear - startYear
-      const diffMonths = currMonth - startMonth
+      const monthsOfExperience = differenceInMonths(currDate, startDate)
+      const years = Math.floor(monthsOfExperience / 12)
+      const months = monthsOfExperience % 12
 
       return {
-        year: diffYears,
-        month: diffMonths
+        years,
+        months
       }
     },
 
