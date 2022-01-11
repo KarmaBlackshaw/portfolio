@@ -44,9 +44,6 @@ export default {
     PortfolioProjectCard
   },
 
-  data: () => ({
-  }),
-
   computed: {
     projects () {
       // image dim 1182x885
