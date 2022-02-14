@@ -117,6 +117,15 @@ export default {
 
   title: 'Resume',
 
+  metaInfo: {
+    title: 'Resume',
+    titleTemplate: `%s | ${process.env.VUE_APP_TITLE}`,
+    meta: [
+      { vmid: 'resume', name: 'resume', content: 'Resume of Ernie Jeash' },
+      { vmid: 'portfolio', name: 'portfolio', content: 'Portfolio of Ernie Jeash' }
+    ]
+  },
+
   data () {
     return {
       resumeList: [

@@ -104,20 +104,5 @@ module.exports = {
     'vue/v-bind-style': ['error', 'shorthand'],
     'vue/v-on-style': ['error', 'shorthand'],
     'no-labels': 'off'
-  },
-
-  overrides: [
-    {
-      files: ['src/assets/js/translations/**/*.js'],
-      rules: {
-        camelcase: 'off'
-      }
-    },
-    {
-      files: ['tests/**/*.js'],
-      rules: {
-        'no-undef': 'off'
-      }
-    }
-  ]
+  }
 }

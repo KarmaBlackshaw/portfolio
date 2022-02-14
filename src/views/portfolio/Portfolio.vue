@@ -38,7 +38,13 @@ import PortfolioProjectCard from './components/PortfolioProjectCard'
 export default {
   name: 'Portfolio',
 
-  title: 'Portfolio',
+  metaInfo: {
+    title: 'Portfolio',
+    titleTemplate: `%s | ${process.env.VUE_APP_TITLE}`,
+    meta: [
+      { vmid: 'portfolio', name: 'portfolio', content: 'Portfolio of Ernie Jeash' }
+    ]
+  },
 
   components: {
     PortfolioProjectCard

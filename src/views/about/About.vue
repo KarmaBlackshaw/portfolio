@@ -131,7 +131,14 @@ import differenceInMonths from 'date-fns/differenceInMonths'
 export default {
   name: 'About',
 
-  title: 'About',
+  metaInfo: {
+    title: 'About',
+    titleTemplate: `%s | ${process.env.VUE_APP_TITLE}`,
+    meta: [
+      { vmid: 'about', name: 'about', content: 'About Ernie Jeash' },
+      { vmid: 'portfolio', name: 'portfolio', content: 'Portfolio of Ernie Jeash' }
+    ]
+  },
 
   data () {
     return {

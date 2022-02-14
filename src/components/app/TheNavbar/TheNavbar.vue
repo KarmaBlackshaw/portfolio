@@ -18,7 +18,7 @@
       </button>
 
       <div class="nav__title">
-        karma.dev
+        Ernie Jeash
       </div>
 
       <div

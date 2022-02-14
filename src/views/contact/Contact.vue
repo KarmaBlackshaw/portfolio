@@ -152,7 +152,14 @@ import email from '@/config/email'
 export default {
   name: 'Contact',
 
-  title: 'Contact',
+  metaInfo: {
+    title: 'Contact',
+    titleTemplate: `%s | ${process.env.VUE_APP_TITLE}`,
+    meta: [
+      { vmid: 'contact', name: 'contact', content: 'Contact of Ernie Jeash' },
+      { vmid: 'portfolio', name: 'portfolio', content: 'Portfolio of Ernie Jeash' }
+    ]
+  },
 
   data: () => ({
     forms: {

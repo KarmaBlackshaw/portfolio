@@ -104,7 +104,14 @@ import _differenceInCalendarYears from 'date-fns/differenceInCalendarYears'
 export default {
   name: 'Home',
 
-  title: 'Home',
+  metaInfo: {
+    title: process.env.VUE_APP_TITLE,
+    titleTemplate: null,
+    meta: [
+      { vmid: 'home', name: 'home', content: 'Portfolio Home Page of Ernie Jeash' },
+      { vmid: 'portfolio', name: 'portfolio', content: 'Portfolio of Ernie Jeash' }
+    ]
+  },
 
   components: {
     HomeSvgCodeThink
