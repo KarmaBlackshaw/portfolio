@@ -27,7 +27,7 @@
           data-aos="fade-up"
           data-aos-delay="400"
         >
-          A {{ age }}-year-old <b>Software Developer</b> based in <b>Cebu, Philippines</b>. Web enthusiast. Enjoys creating web applications from frontend to backend until deployment.
+          A {{ age }}-year-old <b>Fullstack Web Developer</b> based in <b>Cebu, Philippines</b>. Web enthusiast. Enjoys creating web applications from frontend to backend until deployment.
         </p>
 
         <div class="card__communicate">

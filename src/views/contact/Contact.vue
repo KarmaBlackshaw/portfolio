@@ -156,8 +156,8 @@ export default {
     title: 'Contact',
     titleTemplate: `%s | ${process.env.VUE_APP_TITLE}`,
     meta: [
-      { vmid: 'contact', name: 'contact', content: 'Contact of Ernie Jeash' },
-      { vmid: 'portfolio', name: 'portfolio', content: 'Portfolio of Ernie Jeash' }
+      { name: 'contact', content: 'Contact of Ernie Jeash' },
+      { name: 'portfolio', content: 'Portfolio of Ernie Jeash' }
     ]
   },
 
