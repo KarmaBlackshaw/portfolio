@@ -2,11 +2,16 @@
   <div class="card">
     <div class="card__header">
       <div class="card__figure">
-        <img
-          class="card__image"
-          :src="image"
-          alt=""
+        <a
+          :href="href"
+          target="_blank"
         >
+          <img
+            class="card__image"
+            :src="image"
+            alt=""
+          >
+        </a>
       </div>
     </div>
 
@@ -28,14 +33,14 @@
             </a>
           </div>
 
-          <div class="footer__stack">
+          <a class="footer__stack">
             <img
               v-for="(currStack, stackKey) in stack"
               :key="stackKey"
               :src="require(`../assets/images/icons/${currStack}.png`)"
               alt=""
             >
-          </div>
+          </a>
         </div>
       </div>
     </div>

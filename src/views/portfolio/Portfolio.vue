@@ -52,7 +52,7 @@ export default {
 
   computed: {
     projects () {
-      // image dim 1182x885
+      // image dim 1182 x 885
       return [
         {
           title: 'Job Portal',
@@ -76,6 +76,12 @@ export default {
           title: '2048 Game',
           img: '2048.png',
           href: 'https://karma-2048.netlify.app/',
+          stack: ['vue']
+        },
+        {
+          title: 'DTR Generator',
+          img: 'deped-attendance-generator.png',
+          href: 'https://deped-attendance.netlify.app/',
           stack: ['vue']
         }
       ]

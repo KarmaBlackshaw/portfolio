@@ -37,7 +37,7 @@
             :data-aos-delay="600"
             @click="$router.push({name: 'contact'})"
           >
-            Chat with me
+            Say Hello
           </a>
 
           <a

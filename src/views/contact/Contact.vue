@@ -107,7 +107,11 @@
                 data-aos-delay="0"
               >
                 <div class="details__heading">
-                  Have a project in mind? Let's collaborate with that!
+                  <h1>Have a project in mind? Let's collaborate with that!</h1>
+
+                  <h5>
+                    Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+                  </h5>
                 </div>
               </div>
 
