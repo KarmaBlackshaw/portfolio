@@ -3,9 +3,9 @@
     <TheNavbar />
 
     <article class="main-article">
-      <section>
+      <keep-alive>
         <router-view />
-      </section>
+      </keep-alive>
     </article>
 
     <!-- <app-footer v-if="$route.name !== 'home'" /> -->
