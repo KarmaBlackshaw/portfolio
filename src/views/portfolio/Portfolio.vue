@@ -75,13 +75,13 @@ export default {
         {
           title: '2048 Game',
           img: '2048.png',
-          href: 'https://karma-2048.netlify.app/',
+          href: 'https://2048.jeash.tech',
           stack: ['vue']
         },
         {
           title: 'DTR Generator',
           img: 'deped-attendance-generator.png',
-          href: 'https://deped-attendance.netlify.app/',
+          href: 'https://excel-attendance.jeash.tech',
           stack: ['vue']
         }
       ]
