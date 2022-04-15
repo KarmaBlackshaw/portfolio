@@ -200,6 +200,11 @@ export default {
           text: 'Javascript',
           img: 'javascript',
           since: getYearsOfExp(2018)
+        },
+        {
+          text: 'Git',
+          img: 'git',
+          since: getYearsOfExp(2019)
         }
       ]
     },
