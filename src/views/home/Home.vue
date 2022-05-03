@@ -108,8 +108,16 @@ export default {
     title: process.env.VUE_APP_TITLE,
     titleTemplate: null,
     meta: [
-      { name: 'ernie jeash', content: 'Portfolio Home Page of Ernie Jeash' },
-      { vmid: 'portfolio', name: 'portfolio', content: 'Portfolio of Ernie Jeash' }
+      {
+        name: 'ernie jeash',
+        ogImage: 'https://images.pexels.com/photos/7538775/pexels-photo-7538775.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        content: 'Portfolio Home Page of Ernie Jeash'
+      },
+      {
+        vmid: 'portfolio',
+        name: 'portfolio',
+        content: 'Portfolio of Ernie Jeash'
+      }
     ]
   },
 
