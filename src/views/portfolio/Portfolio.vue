@@ -81,7 +81,7 @@ export default {
         {
           title: 'DTR Generator',
           img: 'deped-attendance-generator.png',
-          href: 'https://excel-attendance.jeash.tech',
+          href: 'https://dtr.jeash.tech',
           stack: ['vue']
         }
       ]
