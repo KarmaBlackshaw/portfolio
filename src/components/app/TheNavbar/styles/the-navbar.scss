@@ -53,10 +53,11 @@
       a {
         text-decoration: none;
         color: white;
-        text-transform: uppercase;
-        font-size: 0.9em;
+        text-transform: capitalize;
         transition: all 0.5s ease;
         position: relative;
+        font-family: "Quicksand";
+        font-weight: 300 !important;
 
         &:after {
           @extend .after-link;
