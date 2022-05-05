@@ -17,7 +17,6 @@
     "gsap": "file:src/assets/js/libs/gsap-bonus.tgz",
     "joi": "^17.5.0",
     "node-gyp": "^8.1.0",
-    "node-sass": "^7.0.0",
     "sass-loader": "^10.2.0",
     "v-click-outside": "^3.1.2",
     "vue": "^2.6.11",
@@ -39,6 +38,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0",
+    "sass": "^1.51.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
