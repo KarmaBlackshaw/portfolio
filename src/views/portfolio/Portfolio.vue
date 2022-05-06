@@ -21,6 +21,8 @@
             :title="currProject.title"
             :stack="currProject.stack"
             :href="currProject.href"
+            :data-aos-delay="200 * projectKey"
+            data-aos="flip-right"
             class="projects__item"
           />
         </div>
