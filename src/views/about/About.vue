@@ -38,13 +38,13 @@
       <div class="about__body--bio">
         <div class="bio__details">
           <p>
-            Hello! I am <span class="bold">Ernie Jeash Villahermosa</span>, a fullstack javascript developer with <span class="bold">{{ durationOfExperience.years }} years and {{ durationOfExperience.months }} {{ durationOfExperience.months > 1 ? 'months' : 'month' }}</span> of experience, specializing in developing web applications with Vue and Node.
+            Hello! I am <span class="highlight">Ernie Jeash Villahermosa</span>, a fullstack javascript developer with <span class="highlight">{{ durationOfExperience.years }} years and {{ durationOfExperience.months }} {{ durationOfExperience.months > 1 ? 'months' : 'month' }}</span> of experience, specializing in developing web applications with Vue and Node.
           </p>
 
           <p>
             I graduated at
             <a
-              class="bold"
+              class="highlight"
               href="https://www.lnu.edu.ph/"
               target="_blank"
             >Leyte Normal University</a>
@@ -52,7 +52,7 @@
             {{ graduationFromNow }} years ago with a Bachelors degree in Information Technology, under the scholarship of
 
             <a
-              class="bold"
+              class="highlight"
               href="https://sei.dost.gov.ph/index.php/scholarships/2015"
               target="_blank"
             >DOST</a>.
