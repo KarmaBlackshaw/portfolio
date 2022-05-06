@@ -68,53 +68,26 @@
         </div>
 
         <div class="bio__figure">
-          <div class="figure__background"></div>
-
-          <img
-            v-show="imgLoaded.programming"
-            src="./assets/svg/programming.svg"
-            alt=""
-            @load="() => imgLoaded.programming = true"
-          >
-
-          <base-loading
-            v-if="!imgLoaded.programming"
-            class="figure__loading"
-            size="70"
-            border="2"
-            foreground-color="#242D31"
-          />
-        </div>
-      </div>
-
-      <base-section-title>
-        Stack
-      </base-section-title>
-
-      <div class="abount__stack--bio">
-        <div class="stack__list">
-          <div
-            v-for="(currStack, stackKey) in stacksList"
-            :key="stackKey"
-            data-aos="fade-up"
-            :data-aos-delay="200 * stackKey"
-          >
+          <div class="stack__list">
             <div
-              class="stack__item"
+              v-for="(currStack, stackKey) in stacksList"
+              :key="stackKey"
             >
-              <div class="stack__item--logo">
-                <img
-                  :src="require(`./assets/images/${currStack.img}.png`)"
-                  alt=""
-                >
-              </div>
-
-              <div class="stack__item--text">
-                <div class="text__title">
-                  {{ currStack.text }}
+              <div class="stack__item">
+                <div class="stack__item--logo">
+                  <img
+                    :src="require(`./assets/images/${currStack.img}.png`)"
+                    alt=""
+                  >
                 </div>
-                <div class="text__subtitle">
-                  {{ currStack.since }} years
+
+                <div class="stack__item--text">
+                  <p class="text__title">
+                    {{ currStack.text }}
+                  </p>
+                  <p class="text__subtitle">
+                    {{ currStack.since }} years
+                  </p>
                 </div>
               </div>
             </div>
@@ -142,10 +115,6 @@ export default {
 
   data () {
     return {
-      imgLoaded: {
-        programming: false
-      },
-
       aboutList: [
         {
           title: 'Type:',

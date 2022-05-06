@@ -62,18 +62,12 @@
       justify-content: space-between;
       width: 100%;
       margin-bottom: 50px;
-
-      @include xs {
-        flex-direction: column-reverse;
-      }
-
-      @include sm {
-        flex-direction: column-reverse;
-      }
+      gap: 50px;
 
       .bio__details,
       .bio__figure {
-        width: 45%;
+        flex: 1 1 0;
+        width: 100%;
 
         @include sm {
           width: 100%;
@@ -85,8 +79,6 @@
       }
 
       .bio__details {
-        margin-right: auto;
-
         p {
           margin-bottom: 20px;
         }
@@ -98,8 +90,7 @@
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
-        animation: float 6s ease-in-out infinite;
+        align-items: flex-start;
 
         @include smAndBelow {
           margin-bottom: 20px;
@@ -150,26 +141,13 @@
       }
     }
 
-    .abount__stack--bio {
-      margin-bottom: 50px;
+    .stack__list {
+      $transition-duration: 0.4s;
 
-      .stack__list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-
-        @include md {
-          grid-template-columns: repeat(3, 1fr);
-        }
-
-        @include sm {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        @include xs {
-          grid-template-columns: repeat(1, 1fr);
-        }
-      }
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
 
       .stack__item {
         width: 100%;
@@ -181,20 +159,29 @@
         margin-right: 20px;
         border-radius: 5px;
         overflow: hidden;
-        transition: 0.4s ease;
-        transition-property: transform, box-shadow;
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        padding: 10px;
+        transition: $transition-duration ease;
+        transition-property: transform, box-shadow, background-color;
 
         &:hover {
-          transform: scale(1.03);
           box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2),
             0 6px 15px 0 rgba(0, 0, 0, 0.19);
+          background-color: white;
 
-          .stack-item--logo {
-            img {
-              transform: scale(1.15);
+          .stack__item--logo {
+            filter: grayscale(0) invert(0);
+          }
+
+          .stack__item--text {
+            .text__title {
+              color: #373e42;
+            }
+
+            .text__subtitle {
+              color: #373e42;
             }
           }
         }
@@ -206,7 +193,8 @@
           align-items: center;
           height: 100%;
           width: 60px;
-          background: white;
+          filter: grayscale(1) invert(1);
+          transition: filter $transition-duration ease;
 
           img {
             transition: all 0.4s ease;
@@ -219,14 +207,17 @@
         .stack__item--text {
           display: flex;
           justify-content: flex-start;
+          align-items: center;
           flex-direction: column;
 
           .text__title {
             font-family: "Quicksand", sans-serif;
             font-weight: 700;
             text-transform: uppercase;
+            font-size: 0.9em;
+            line-height: 0.9em;
             color: $text-color--primary;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
           }
 
           .text__subtitle {
@@ -234,6 +225,7 @@
             text-transform: uppercase;
             color: $text-color--primary-muted;
             font-size: 0.8em;
+            line-height: 0.8em;
           }
         }
       }
