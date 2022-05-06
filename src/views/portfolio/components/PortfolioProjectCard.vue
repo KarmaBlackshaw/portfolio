@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card__header">
-      <div class="card__figure">
+      <figure class="card__figure">
         <a
           :href="href"
           target="_blank"
@@ -12,7 +12,7 @@
             alt=""
           >
         </a>
-      </div>
+      </figure>
     </div>
 
     <div class="card__footer">

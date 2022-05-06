@@ -6,23 +6,6 @@
 
 .projects__list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
-
-  @include lgAndBelow {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @include mdAndBelow {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include smAndBelow {
-    grid-template-columns: 1fr;
-  }
-
-  .projects__item {
-    min-width: 100% / 4;
-    flex-basis: (100% / 4);
-  }
 }
