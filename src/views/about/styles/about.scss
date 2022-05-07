@@ -118,7 +118,7 @@
 
       display: grid;
       width: 100%;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 10px;
 
       .stack__item {
@@ -160,7 +160,7 @@
         }
 
         .stack__item--logo {
-          margin-right: 20px;
+          margin-right: 10px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -180,14 +180,13 @@
         .stack__item--text {
           display: flex;
           justify-content: flex-start;
-          align-items: center;
           flex-direction: column;
 
           .text__title {
             font-family: "Quicksand", sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.9em;
+            font-size: 0.8em;
             line-height: 0.9em;
             color: $text-color--primary;
             margin-bottom: 5px;
@@ -197,7 +196,7 @@
             font-family: "Quicksand", sans-serif;
             text-transform: uppercase;
             color: $text-color--primary-muted;
-            font-size: 0.8em;
+            font-size: 0.6em;
             line-height: 0.8em;
           }
         }
