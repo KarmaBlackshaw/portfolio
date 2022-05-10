@@ -89,6 +89,12 @@ export default {
           img: 'mark-photography.png',
           href: 'https://anade.jeash.tech',
           stack: ['vue']
+        },
+        {
+          title: 'Case Converter',
+          img: 'case-converter.png',
+          href: 'https://case.jeash.tech/',
+          stack: ['vue']
         }
       ]
     }
