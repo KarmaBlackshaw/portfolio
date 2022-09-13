@@ -37,28 +37,9 @@
 
                 <div class="email__input">
                   <input
-                    v-model="forms.email.data.from_name"
+                    v-model="forms.email.data.name"
                     type="text"
                     placeholder="Karma Blackshaw"
-                    @input="handleOnInput"
-                  >
-                </div>
-              </div>
-
-              <div
-                class="email__item"
-                data-aos="fade-right"
-                data-aos-delay="100"
-              >
-                <div class="email__label">
-                  Email
-                </div>
-
-                <div class="email__input">
-                  <input
-                    v-model="forms.email.data.from_email"
-                    type="text"
-                    placeholder="johndoe@gmail.com"
                     @input="handleOnInput"
                   >
                 </div>
@@ -151,7 +132,6 @@
 import Joi from 'joi'
 
 import _debounce from 'lodash/debounce'
-import email from '@/config/email'
 
 export default {
   name: 'Contact',
@@ -170,8 +150,7 @@ export default {
       email: {
         is_valid: false,
         data: {
-          from_name: undefined,
-          from_email: undefined,
+          name: undefined,
           message: undefined
         }
       }
@@ -205,13 +184,9 @@ export default {
       const form = this.forms.email
 
       const schema = Joi.object({
-        from_name: Joi.string()
+        name: Joi.string()
           .optional()
           .label('Name'),
-        from_email: Joi.string()
-          .email({ tlds: { allow: false } })
-          .required()
-          .label('Email'),
         message: Joi.string()
           .required()
           .label('Message')
@@ -222,15 +197,19 @@ export default {
         .catch(() => this.$set(this.forms.email, 'is_valid', false))
     }, 300),
 
-    async handleFormSubmit () {
+    handleFormSubmit () {
       try {
-        const form = this.forms.email
+        const form = this.forms.email.data
 
-        await email.send({
-          from_name: form.data.from_name,
-          from_email: form.data.from_email,
-          message: form.data.message
-        })
+        const params = new URLSearchParams({
+          to: 'irenesejah29@gmail.com',
+          su: `Message from ${form.name}`,
+          body: form.message,
+          view: 'cm',
+          fs: 1
+        }).toString()
+
+        window.open(`https://mail.google.com/mail/?${params}`, '_self')
       } catch (error) {
         console.log(error)
       }
