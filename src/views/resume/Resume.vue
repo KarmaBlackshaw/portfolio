@@ -129,16 +129,16 @@ export default {
   data () {
     return {
       resumeList: [
-        {
-          title: 'Software Engineer',
-          company: 'Outliant',
-          duration: 'July 2022 - Present',
-          stack: ['vue', 'node', 'dynamodb', 'elasticsearch', 'serverless', 'sass'],
-          tasks: [
-            'Incrementally improving processes/code/efficiency',
-            'Maintain and scale the sites'
-          ]
-        },
+        // {
+        //   title: 'Software Engineer',
+        //   company: 'Outliant',
+        //   duration: 'July 2022 - Present',
+        //   stack: ['vue', 'node', 'dynamodb', 'elasticsearch', 'serverless', 'sass'],
+        //   tasks: [
+        //     'Incrementally improving processes/code/efficiency',
+        //     'Maintain and scale the sites'
+        //   ]
+        // },
         {
           title: 'Fullstack Software Developer',
           company: 'Cubic Solutions',
